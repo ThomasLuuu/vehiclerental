@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/ThomasLuuu/vehiclerental#readme",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-layout": "^0.1.0",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.7.0",
     "mongoose": "^6.4.2",
     "node-modules": "^1.0.1"
   }
