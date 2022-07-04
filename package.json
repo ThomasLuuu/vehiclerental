@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/ThomasLuuu/vehiclerental/issues"
   },
-  "homepage": "https://github.com/ThomasLuuu/vehiclerental#readme"
+  "homepage": "https://github.com/ThomasLuuu/vehiclerental#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-layout": "^0.1.0",
+    "mongoose": "^6.4.2",
+    "node-modules": "^1.0.1"
+  }
 }
