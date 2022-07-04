@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "debug": "eslint -- -- src",
+    "fix": "eslint --fix src",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,14 @@
   "bugs": {
     "url": "https://github.com/ThomasLuuu/vehiclerental/issues"
   },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^1.3.3",
+    "prettier": "^2.7.1"
+  },
   "homepage": "https://github.com/ThomasLuuu/vehiclerental#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -25,6 +35,13 @@
     "mongo": "^0.1.0",
     "mongodb": "^4.7.0",
     "mongoose": "^6.4.2",
-    "node-modules": "^1.0.1"
+    "morgan": "^1.10.0",
+    "xss-clean": "^0.1.1",
+    "node-modules": "^1.0.1",
+    "cors": "^2.8.5",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.4.0",
+    "http-status": "^1.5.2",
+    "helmet": "^5.1.0"
   }
 }
