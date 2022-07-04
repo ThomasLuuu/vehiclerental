@@ -1,0 +1,21 @@
+{
+  "name": "vehiclerental",
+  "version": "1.0.0",
+  "description": "Website for renting vehicle",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasLuuu/vehiclerental.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasLuuu/vehiclerental/issues"
+  },
+  "homepage": "https://github.com/ThomasLuuu/vehiclerental#readme"
+}
