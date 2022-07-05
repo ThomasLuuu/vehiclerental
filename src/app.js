@@ -8,14 +8,15 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const path = require('path');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
-const { ResponseService } = require('./services');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
-
+const { ResponseService } = require('./services');
 const { DbConfig } = require('./config');
-
-require('dotenv').config({ path: path.join(__dirname, '/config.env') });
+const indexRouter = require('./routers/index');
+const indexService = require('./services/index');
 
 const app = express();
 
@@ -24,17 +25,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './node_modules_bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, './config')));
 
+// allow bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 // db configuration
 const db = DbConfig.mongoURI;
 
+dotenv.config();
 // connect db
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => {
-    console.log('Connected to MongoDB...');
-  })
-  .catch((err) => console.log(err));
-
+mongoose.connect(process.env.DB_CONNECT, () => console.log('connected to the database'));
 // Use morgan to log any requests come to server
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -81,8 +80,13 @@ app.use('*', (req, res, next) => {
 // error handling middleware
 app.use(globalErrorHandler);
 
+// path of routes
+app.use('/api/auth', indexService.authService);
+app.use('/api/user', indexRouter.userRouter);
+app.use('/api', indexService.mobileService);
+
 // running
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

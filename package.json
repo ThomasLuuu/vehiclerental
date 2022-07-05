@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
     "debug": "eslint -- -- src",
     "fix": "eslint --fix src",
     "dev": "nodemon src/app.js"
@@ -24,24 +23,30 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "nodemon": "^1.3.3",
+    "nodemon": "^2.0.18",
     "prettier": "^2.7.1"
   },
   "homepage": "https://github.com/ThomasLuuu/vehiclerental#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-layout": "^0.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.4.0",
+    "helmet": "^5.1.0",
+    "http-status": "^1.5.2",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
     "mongo": "^0.1.0",
     "mongodb": "^4.7.0",
     "mongoose": "^6.4.2",
     "morgan": "^1.10.0",
-    "xss-clean": "^0.1.1",
     "node-modules": "^1.0.1",
-    "cors": "^2.8.5",
-    "express-mongo-sanitize": "^2.2.0",
-    "express-rate-limit": "^6.4.0",
-    "http-status": "^1.5.2",
-    "helmet": "^5.1.0"
+    "router": "^1.3.7",
+    "twilio": "^3.78.0",
+    "xss-clean": "^0.1.1"
   }
 }
