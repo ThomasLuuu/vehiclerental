@@ -17,9 +17,27 @@ const Error = {
   },
   UserNotFound: {
     errCode: 103,
-    errMessage: 'User not  found',
+    errMessage: 'Email or Password invalid',
   },
-
+  RegisterValidationErr: {
+    errCode: 104,
+  },
+  EmailExists: {
+    errCode: 105,
+    errMessage: 'Email already exists',
+  },
+  PhoneFormattedError: {
+    errCode: 106,
+    errMessage: 'Phone format wrong',
+  },
+  PhoneCodeVerificationError: {
+    errCode: 107,
+    errMessage: 'Phone code wrong',
+  },
+  PhoneEmpty: {
+    errCode: 108,
+    errMessage: 'Phone empty',
+  },
   // 200++ Error from Db
   CastError: {
     errCode: 201,
@@ -31,7 +49,24 @@ const Error = {
   },
 
   // 300++ Error from Third Party
-
+  HashPasswordBCrypt: {
+    errCode: 300,
+  },
+  TokenNotCreated: {
+    errCode: 301,
+    errMessage: 'Token undefined',
+  },
+  SendCodeTwilioError: {
+    errCode: 302,
+  },
+  TokenMissing: {
+    errCode: 303,
+    errMessage: 'Token missing',
+  },
+  TokenInvalid: {
+    errCode: 304,
+    errMessage: 'Token invalid',
+  },
   // 400++ Error from Internal Server
   GenericError: {
     statusCode: httpStatus.INTERNAL_SERVER_ERROR,

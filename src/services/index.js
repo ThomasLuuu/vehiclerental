@@ -1,5 +1,5 @@
 const ResponseService = require('./response/response.service');
-const authService = require('./auth');
-const mobileService = require('./mobile');
+const AuthService = require('./auth/auth.service');
+const MobileService = require('./mobile/mobile');
 
-module.exports = { ResponseService, authService, mobileService };
+module.exports = { ResponseService, AuthService, MobileService };

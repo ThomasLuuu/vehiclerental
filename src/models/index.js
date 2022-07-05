@@ -1,11 +1,11 @@
-const FeedBackModel = require('./feedback.model');
-const UserModel = require('./user.model');
-const VehicleModel = require('./vehicle.model');
-const RoleModel = require('./role.model');
+const FeedBack = require('./feedback.model');
+const User = require('./user.model');
+const Vehicle = require('./vehicle.model');
+const Role = require('./role.model');
 
 module.exports = {
-  FeedBackModel,
-  UserModel,
-  VehicleModel,
-  RoleModel,
+  FeedBack,
+  User,
+  Vehicle,
+  Role,
 };

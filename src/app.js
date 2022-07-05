@@ -14,9 +14,7 @@ const dotenv = require('dotenv');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
 const { ResponseService } = require('./services');
-const { DbConfig } = require('./config');
-const indexRouter = require('./routers/index');
-const indexService = require('./services/index');
+const { AuthRouter, UserRouter, MobileRouter } = require('./routers');
 
 const app = express();
 
@@ -29,7 +27,6 @@ app.use(express.static(path.join(__dirname, './config')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // db configuration
-const db = DbConfig.mongoURI;
 
 dotenv.config();
 // connect db
@@ -70,7 +67,10 @@ app.use(mongoSanitize()); // filter out the dollar signs protect from  query inj
 app.use(xss()); // protect from molision code coming from html
 
 // Use specific Router to handle each end point
-// app.use('/api/v1/users', UserRouter);
+// path of routes
+app.use('/api/auth', AuthRouter);
+app.use('/api/user', UserRouter);
+app.use('/api/mobile', MobileRouter);
 
 // handling all (get,post,update,delete.....) unhandled routes
 app.use('*', (req, res, next) => {
@@ -79,11 +79,6 @@ app.use('*', (req, res, next) => {
 
 // error handling middleware
 app.use(globalErrorHandler);
-
-// path of routes
-app.use('/api/auth', indexService.authService);
-app.use('/api/user', indexRouter.userRouter);
-app.use('/api', indexService.mobileService);
 
 // running
 const port = process.env.PORT || 8080;
