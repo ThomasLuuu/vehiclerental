@@ -47,6 +47,7 @@
     "morgan": "^1.10.0",
     "node-modules": "^1.0.1",
     "router": "^1.3.7",
+    "twilio": "^3.78.0",
     "xss-clean": "^0.1.1"
   }
 }

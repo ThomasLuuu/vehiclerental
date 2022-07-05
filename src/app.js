@@ -8,7 +8,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const path = require('path');
 const mongoose = require('mongoose');
-const authRouter = require('../routes/auth');
+const indexRouter = require('./routers/index.js');
+const indexService = require('./services/index.js');
 const { ResponseService } = require('./services');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
@@ -82,7 +83,9 @@ app.use(xss()); // protect from molision code coming from html
 app.use(globalErrorHandler);
 
 //path of routes
-app.use('/api/auth', authRouter);
+app.use('/api/auth', indexService.authService);
+app.use('/api/user',indexRouter.userRouter);
+app.use('/api', indexService.mobileService);
 
 // running
 const port = process.env.PORT || 8080;

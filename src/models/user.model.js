@@ -25,6 +25,13 @@ const userSchema = new mongoose.Schema({
     min: 6,
     max:100
   },
+  codeActive:{
+    type: String
+  },
+  verify:{
+    type: Boolean,
+    default: false,
+  }
 });
 const User = mongoose.model('User', userSchema);
 module.exports = User;
