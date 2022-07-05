@@ -8,15 +8,13 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const path = require('path');
 const mongoose = require('mongoose');
-
+const authRouter = require('../routes/auth');
 const { ResponseService } = require('./services');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
-
+const bodyParser = require('body-parser');
 const { DbConfig } = require('./config');
-
-require('dotenv').config({ path: path.join(__dirname, '/config.env') });
-
+const dotenv = require('dotenv');
 const app = express();
 
 // Express body parser
@@ -24,17 +22,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './node_modules_bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, './config')));
 
+
+//allow bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 // db configuration
 const db = DbConfig.mongoURI;
 
+dotenv.config();
 // connect db
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => {
-    console.log('Connected to MongoDB...');
-  })
-  .catch((err) => console.log(err));
-
+mongoose.connect(
+  process.env.DB_CONNECT,
+  ()=> console.log("connected to the database")
+);
 // Use morgan to log any requests come to server
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -74,15 +74,18 @@ app.use(xss()); // protect from molision code coming from html
 // app.use('/api/v1/users', UserRouter);
 
 // handling all (get,post,update,delete.....) unhandled routes
-app.use('*', (req, res, next) => {
-  next(ResponseService.throwError(Error.UrlNotFound.statusCode, Error.UrlNotFound.errorCode, Error.UrlNotFound.message));
-});
+// app.use('*', (req, res, next) => {
+//   next(ResponseService.throwError(Error.UrlNotFound.statusCode, Error.UrlNotFound.errorCode, Error.UrlNotFound.message));
+// });
 
 // error handling middleware
 app.use(globalErrorHandler);
 
+//path of routes
+app.use('/api/auth', authRouter);
+
 // running
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
