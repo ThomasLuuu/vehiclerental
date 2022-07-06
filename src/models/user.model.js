@@ -5,33 +5,33 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     min: 6,
-    max:100
+    max: 100,
   },
   password: {
     type: String,
     required: true,
     min: 6,
-    max:100
+    max: 100,
   },
   role: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Role',
     min: 6,
-    max:100
+    max: 100,
   },
   email: {
     type: String,
     required: true,
     min: 6,
-    max:100
+    max: 100,
   },
-  codeActive:{
-    type: String
+  codeActive: {
+    type: String,
   },
-  verify:{
+  verify: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 const User = mongoose.model('User', userSchema);
 module.exports = User;
