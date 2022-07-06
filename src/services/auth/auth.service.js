@@ -14,7 +14,6 @@ const register = async (username, email, password) => {
 
   if (checkEmailExist) throw ResponseService.newError(Error.EmailExists.errCode, Error.EmailExists.errMessage);
 
-  console.log(password);
 
   const newUser = new User({
     username,
