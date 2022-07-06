@@ -73,6 +73,14 @@ const Error = {
     errCode: 400,
     errMessage: 'Something wrong happened.',
   },
+  VehicleExitsError:{
+    errCode: 344,
+    errMessage:'This vehicle was already in the service'
+  },
+  VehicleNotExitsError:{
+    errCode: 345,
+    errMessage:'This vehicle is not in the service'
+  }
 };
 
 module.exports = Error;
