@@ -8,14 +8,14 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const path = require('path');
 const mongoose = require('mongoose');
-const indexRouter = require('./routers/index.js');
-const indexService = require('./services/index.js');
-const { ResponseService } = require('./services');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
-const bodyParser = require('body-parser');
-const { DbConfig } = require('./config');
-const dotenv = require('dotenv');
+const { ResponseService } = require('./services');
+const { AuthRouter, UserRouter, MobileRouter } = require('./routers');
+
 const app = express();
 
 // Express body parser
@@ -23,19 +23,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './node_modules_bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, './config')));
 
-
-//allow bodyParser
+// allow bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // db configuration
-const db = DbConfig.mongoURI;
 
 dotenv.config();
 // connect db
-mongoose.connect(
-  process.env.DB_CONNECT,
-  ()=> console.log("connected to the database")
-);
+mongoose.connect(process.env.DB_CONNECT, () => console.log('connected to the database'));
 // Use morgan to log any requests come to server
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -72,20 +67,18 @@ app.use(mongoSanitize()); // filter out the dollar signs protect from  query inj
 app.use(xss()); // protect from molision code coming from html
 
 // Use specific Router to handle each end point
-// app.use('/api/v1/users', UserRouter);
+// path of routes
+app.use('/api/auth', AuthRouter);
+app.use('/api/user', UserRouter);
+app.use('/api/mobile', MobileRouter);
 
 // handling all (get,post,update,delete.....) unhandled routes
-// app.use('*', (req, res, next) => {
-//   next(ResponseService.throwError(Error.UrlNotFound.statusCode, Error.UrlNotFound.errorCode, Error.UrlNotFound.message));
-// });
+app.use('*', (req, res, next) => {
+  next(ResponseService.newError(Error.UrlNotFound.errCode, Error.UrlNotFound.errMessage));
+});
 
 // error handling middleware
 app.use(globalErrorHandler);
-
-//path of routes
-app.use('/api/auth', indexService.authService);
-app.use('/api/user',indexRouter.userRouter);
-app.use('/api', indexService.mobileService);
 
 // running
 const port = process.env.PORT || 8080;
