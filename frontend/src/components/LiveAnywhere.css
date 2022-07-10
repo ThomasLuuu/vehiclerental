@@ -1,0 +1,48 @@
+@font-face {
+    font-family: AirBnb;
+    src: url(../font/AirbnbCereal_W_Md.otf);
+  }
+  
+  .title{
+    margin-left: 16px;
+    margin-bottom: 25px;
+    font-family: Airbnb;
+  }
+  
+  .img{
+    width: 250px;
+    border-radius: 25px;
+  }
+  
+  .img:hover{
+    cursor: pointer;
+  }
+  
+  .img:hover + .icon{
+    visibility: visible;
+  }
+  
+  .icon{
+    --size: 25px;
+    visibility: hidden;
+    color: white;
+    position: absolute;
+    margin-left: -30px;
+    font-size: 16px;
+    width: var(--size);
+    height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: visibility 0.25s;
+  }
+  
+  .icon:hover{
+    cursor: pointer;
+    visibility: visible;
+  }
+  
+  .container{
+    display: inline;
+    width: fit-content;
+    height: fit-content;
+  }
