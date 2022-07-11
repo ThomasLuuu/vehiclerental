@@ -65,7 +65,6 @@ const Error = {
   },
   TokenInvalid: {
     errCode: 304,
-    errMessage: 'Token invalid',
   },
   // 400++ Error from Internal Server
   GenericError: {
