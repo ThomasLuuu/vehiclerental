@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const registerValidator = (data) => {
   const rule = Joi.object({
-    name: Joi.string().min(6).max(100).required(),
+    username: Joi.string().min(6).max(100).required(),
     password: Joi.string()
       .pattern(/^[a-zA-Z0-9]{6,20}$/)
       .required(),

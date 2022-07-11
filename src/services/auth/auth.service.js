@@ -37,8 +37,26 @@ const login = async (email, password) => {
   if (!user) throw ResponseService.newError(Error.UserNotFound.errCode, Error.UserNotFound.errMessage);
   const checkPassword = await bcrypt.compare(password, user.password);
   if (!checkPassword) throw ResponseService.newError(Error.PasswordInvalid.errCode, Error.PasswordInvalid.errMessage);
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
-  return token;
+
+  const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 60 * 20 });
+  const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
+
+  return { accessToken, refreshToken };
 };
 
-module.exports = { register, login };
+const genRefreshAndAccess = async (token, secret) => {
+  return jwt.verify(token, secret, (err, decoded) => {
+    if (err) {
+      throw ResponseService.newError(Error.TokenInvalid.errCode, err.message);
+    }
+
+    const { userId } = decoded;
+
+    const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 60 * 20 });
+    const newRefreshToken = jwt.sign({ userId }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
+
+    return { accessToken, newRefreshToken };
+  });
+};
+
+module.exports = { register, login, genRefreshAndAccess };

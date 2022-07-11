@@ -10,7 +10,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-
+const cookieParser = require('cookie-parser');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
 const { ResponseService } = require('./services');
@@ -40,7 +40,12 @@ if (process.env.NODE_ENV === 'development') {
 app.use(helmet());
 
 // CORS for server and client communication
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: '*',
+  })
+);
 
 // set limit request from same API in timePeroid from same ip
 // set this limit to API calls only
@@ -59,6 +64,9 @@ app.use('/api', limiter);
 // parses incoming requests with JSON payloads
 // content-type: application/json
 app.use(express.json({ limit: '10kb' }));
+
+// Enable parsing cookies to read
+app.use(cookieParser());
 
 // Data sanitization against NoSql query injection
 app.use(mongoSanitize()); // filter out the dollar signs protect from  query injection attack

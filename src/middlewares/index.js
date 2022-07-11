@@ -1,3 +1,4 @@
 const globalErrorHandler = require('./globalErrorHandler');
+const verifyToken = require('./verifyToken');
 
-module.exports = { globalErrorHandler };
+module.exports = { globalErrorHandler, verifyToken };

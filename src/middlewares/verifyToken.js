@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
   if (!token) next(ResponseService.newError(Error.TokenMissing.errCode, Error.TokenMissing.errMessage));
 
   try {
-    jwt.verify(token, process.env.TOKEN_SECRET);
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     next();
   } catch (err) {
     next(ResponseService.newError(Error.TokenInvalid.errCode, err.message));
