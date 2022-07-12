@@ -1,11 +1,11 @@
 import React from 'react';
 import './LiveAnywhere.css';
 
-const imgLists = ['../img/Img1.jpg', '../img/Img2.jpg', '../img/Img3.jpg', '../img/Img4.jpg'];
+// const imgLists = ['../img/Img1.jpg', '../img/Img2.jpg', '../img/Img3.jpg', '../img/Img4.jpg'];
 
-// imgLists.map((img, index) => {
-//   console.log(img, index);
-// });
+// // imgLists.map((img, index) => {
+// //   console.log(img, index);
+// // });
 
 const Title = () => {
   return (
@@ -15,10 +15,10 @@ const Title = () => {
   );
 };
 
-const Img = ({ loc }) => {
+const Img = ({loc}) => {
   console.log(loc);
   return (
-    <div className="container" style={{ margin: '20px' }}>
+    <div className="container" style={{margin: '20px'}}>
       <img src={loc} alt="" className="img" />
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,21 +34,21 @@ const Img = ({ loc }) => {
   );
 };
 
+const rows = [];
+for (let i = 1; i <= 12; i++){
+  let j = Math.floor(i%4);
+  if (j == 0) {
+    j += 4;
+  }
+  rows.push(<Img loc={require('../img/Img' + j.toString() + '.jpg')} />)
+}
+console.log(rows);
+
 export const LiveAnywhere = () => {
   return (
     <>
       <Title />
-
-      <Img loc={require('../img/Img1.jpg')} />
-      <Img loc={require('../img/Img2.jpg')} />
-
-      <Img loc={require('../img/Img3.jpg')} />
-
-      <Img loc={require('../img/Img4.jpg')} />
-
-      <Img loc={require('../img/Img1.jpg')} />
-
-      <Img loc={require('../img/Img1.jpg')} />
+      {rows}
     </>
   );
 };
