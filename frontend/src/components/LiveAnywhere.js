@@ -1,12 +1,6 @@
 import React from 'react';
 import './LiveAnywhere.css';
 
-// const imgLists = ['../img/Img1.jpg', '../img/Img2.jpg', '../img/Img3.jpg', '../img/Img4.jpg'];
-
-// // imgLists.map((img, index) => {
-// //   console.log(img, index);
-// // });
-
 const Title = () => {
   return (
     <div className="title">
@@ -16,7 +10,6 @@ const Title = () => {
 };
 
 const Img = ({loc}) => {
-  console.log(loc);
   return (
     <div className="container" style={{margin: '20px'}}>
       <img src={loc} alt="" className="img" />
@@ -36,7 +29,7 @@ const Img = ({loc}) => {
 
 const rows = [];
 for (let i = 1; i <= 12; i++){
-  let j = i % 4;
+  let j = i% 4;
   if (j == 0) {
     j += 4;
   }
