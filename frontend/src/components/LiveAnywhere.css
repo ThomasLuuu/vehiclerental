@@ -42,7 +42,7 @@
   }
   
   .container{
-    display: inline;
+    display: inline-block;
     width: fit-content;
     height: fit-content;
   }
