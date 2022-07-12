@@ -36,7 +36,7 @@ const Img = ({loc}) => {
 
 const rows = [];
 for (let i = 1; i <= 12; i++){
-  let j = Math.floor(i%4);
+  let j = i % 4;
   if (j == 0) {
     j += 4;
   }
