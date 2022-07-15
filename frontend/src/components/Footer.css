@@ -10,13 +10,13 @@
 
 .footerp1{
     float: left;
-    padding-left: 70px;
+    padding-left: 4%;
     font-size: 14px;
 }
 
 .footerp2{
     float: right;
-    padding-right: 143px;
+    padding-right: 10%;
     font-size: 14px;
     font-weight: 600;
 }
