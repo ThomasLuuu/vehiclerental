@@ -4,7 +4,28 @@
     bottom: 0;
     width: 100%;
     /* Height of the footer*/ 
-    height: 30px;
+    height: 37px;
     background: white;
+}
+
+.footerp1{
+    float: left;
+    padding-left: 70px;
+    font-size: 14px;
+}
+
+.footerp2{
+    float: right;
+    padding-right: 143px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
 }
 
