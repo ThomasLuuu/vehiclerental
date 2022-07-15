@@ -1,6 +1,5 @@
 import React from 'react'
 import './Footer.css'
-import './LiveAnywhere.css';
 
 const Footer = () => {
     return (
