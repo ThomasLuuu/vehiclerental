@@ -74,6 +74,15 @@ app.use(mongoSanitize()); // filter out the dollar signs protect from  query inj
 // Data sanitization against XSS
 app.use(xss()); // protect from molision code coming from html
 
+// Deployment
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
+    res.end();
+  });
+}
 // Use specific Router to handle each end point
 // path of routes
 app.use('/api/auth', AuthRouter);
