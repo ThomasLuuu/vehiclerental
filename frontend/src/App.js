@@ -1,5 +1,5 @@
 import './App.css';
-import { LiveAnywhere } from './components/LiveAnywhere/LiveAnywhere';
+import LiveAnywhere from './components/LiveAnyWhere/LiveAnywhere';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 function App() {
