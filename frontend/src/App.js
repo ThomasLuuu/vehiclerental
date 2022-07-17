@@ -1,5 +1,6 @@
 import './App.css';
-import { LiveAnywhere } from './components/LiveAnywhere';
+import { LiveAnywhere } from './components/LiveAnywhere/LiveAnywhere';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -7,8 +8,7 @@ function App() {
       {/* <Header /> */}
       {/* <ExploreNearby /> */}
       <LiveAnywhere />
-
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
