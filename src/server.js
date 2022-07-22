@@ -8,7 +8,6 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const path = require('path');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const { Error } = require('./config');
@@ -23,9 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './node_modules_bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, './config')));
 
-// allow bodyParser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 // db configuration
 
 dotenv.config();
