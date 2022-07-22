@@ -12,7 +12,7 @@ const login = catchAsync(async (req, res) => {
   const { refreshToken, accessToken } = await AuthService.login(email, password);
 
   res.cookie('refreshToken', refreshToken, { maxAge: 60 * 60 * 24, httpOnly: true });
-  res.header('auth-token', accessToken).json(ResponseService.newSucess());
+  res.header('Authorization', `Bearer ${accessToken}`).json(ResponseService.newSucess());
 });
 
 const genRefreshAndAccess = catchAsync(async (req, res) => {
@@ -24,12 +24,12 @@ const genRefreshAndAccess = catchAsync(async (req, res) => {
   );
 
   res.cookie('refreshToken', newRefreshToken, { maxAge: 60 * 60 * 24, httpOnly: true });
-  res.header('auth-token', accessToken).json(ResponseService.newSucess());
+  res.header('Authorization', `Bearer ${accessToken}`).json(ResponseService.newSucess());
 });
 
 const logout = catchAsync(async (req, res) => {
   res.cookie('refreshToken', '');
-  res.status(200).json(ResponseService.newSucess());
+  res.header('Authorization', '').json(ResponseService.newSucess());
 });
 
 module.exports = { register, login, logout, genRefreshAndAccess };

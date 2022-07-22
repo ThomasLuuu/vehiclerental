@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 const { registerValidator } = require('../../utils');
 const ResponseService = require('../response/response.service');
+const JwtService = require('./jwt.service');
 const { Error } = require('../../config');
 
 const register = async (username, email, password) => {
@@ -38,25 +38,13 @@ const login = async (email, password) => {
   const checkPassword = await bcrypt.compare(password, user.password);
   if (!checkPassword) throw ResponseService.newError(Error.PasswordInvalid.errCode, Error.PasswordInvalid.errMessage);
 
-  const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 60 * 20 });
-  const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
-
-  return { accessToken, refreshToken };
+  return JwtService.genToken(user._id);
 };
 
 const genRefreshAndAccess = async (token, secret) => {
-  return jwt.verify(token, secret, (err, decoded) => {
-    if (err) {
-      throw ResponseService.newError(Error.TokenInvalid.errCode, err.message);
-    }
-
-    const { userId } = decoded;
-
-    const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 60 * 20 });
-    const newRefreshToken = jwt.sign({ userId }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
-
-    return { accessToken, newRefreshToken };
-  });
+  const userId = await JwtService.tokenVerified(token, secret);
+  const { accessToken, refreshToken } = await JwtService.genToken(userId);
+  return { accessToken, refreshToken };
 };
 
 module.exports = { register, login, genRefreshAndAccess };

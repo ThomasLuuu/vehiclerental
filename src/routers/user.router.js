@@ -1,9 +1,9 @@
-const express = require('express');
-const User = require('../models/user.model.js');
 const router = require('express').Router();
-const verifyToken = require('../middlewares/verifyToken.js');
+const { User } = require('../models');
+const { verifyUser } = require('../middlewares');
 
-router.get('/', verifyToken, (req, res) => {
+router.get('/', verifyUser, (req, res) => {
+  console.log(req.userId);
   User.find({}).exec(function (err, users) {
     res.send(users);
   });
