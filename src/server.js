@@ -13,12 +13,12 @@ const cookieParser = require('cookie-parser');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
 const { ResponseService } = require('./services');
-const { AuthRouter, UserRouter, MobileRouter } = require('./routers');
+const { AuthRouter, UserRouter, MobileRouter, PostRouter } = require('./routers');
 
 const app = express();
 
 // Express body parser
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './node_modules_bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, './config')));
 
@@ -84,6 +84,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/auth', AuthRouter);
 app.use('/api/user', UserRouter);
 app.use('/api/mobile', MobileRouter);
+app.use('/api/post', PostRouter);
 
 // handling all (get,post,update,delete.....) unhandled routes
 app.use('*', (req, res, next) => {
