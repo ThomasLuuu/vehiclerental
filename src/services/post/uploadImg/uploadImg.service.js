@@ -1,13 +1,13 @@
 /* eslint-disable no-restricted-syntax */
 const fs = require('fs');
-const cloudinary = require('./cloudinary.service');
+const CloudinaryService = require('./cloudinary.service');
 
 const uploadImges = async (files) => {
   let cloudinaryImges = [];
 
   for (const file of files) {
     const { path } = file;
-    const cloudinaryImg = cloudinary.uploads(path, 'Images');
+    const cloudinaryImg = CloudinaryService.uploads(path, 'Images');
     cloudinaryImges.push(cloudinaryImg); // the array of Pending Promises
   }
 
