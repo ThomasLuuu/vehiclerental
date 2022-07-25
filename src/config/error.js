@@ -79,6 +79,9 @@ const Error = {
     errCode: 305,
     errMessage: 'Token secret missing',
   },
+  CloudinaryError: {
+    errCode: 306,
+  },
   // 400++ Error from Internal Server
   GenericError: {
     statusCode: httpStatus.INTERNAL_SERVER_ERROR,

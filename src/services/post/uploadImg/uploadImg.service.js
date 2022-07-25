@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 const fs = require('fs');
-const cloudinary = require('./cloudinary');
+const cloudinary = require('./cloudinary.service');
 
 const uploadImges = async (files) => {
   let cloudinaryImges = [];
