@@ -3,13 +3,15 @@ import LiveAnywhere from './components/LiveAnywhere/LiveAnywhere';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import ExploreNearby from './components/ExploreNearby/ExploreNearby';
-
+import PostTitle from './components/DetailedProfile';
 function App() {
+
   return (
     <div className="App">
       <Header />
-      <ExploreNearby />
-      <LiveAnywhere />
+      {/* <ExploreNearby />
+      <LiveAnywhere /> */}
+      <PostTitle/>
       <Footer />
     </div>
   );
