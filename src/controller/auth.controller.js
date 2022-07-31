@@ -4,7 +4,7 @@ const { catchAsync } = require('../utils');
 const register = catchAsync(async (req, res) => {
   const { username, email, password } = req.body;
   await AuthService.register(username, email, password);
-  res.status(200).json(ResponseService.newSucess());
+  res.status(200).json("succesful");
 });
 
 const login = catchAsync(async (req, res) => {
