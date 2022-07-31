@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
-let softDelete = require('mongoosejs-soft-delete');
+const softDelete = require('mongoosejs-soft-delete');
 
 const vehicleSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
-  plate:{
-    type:String,
-    required: true
+  plate: {
+    type: String,
+    required: true,
   },
   version: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   rating: {
     type: Number,

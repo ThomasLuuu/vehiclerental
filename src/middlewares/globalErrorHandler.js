@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 const { ResponseService } = require('../services');
-const Error = require('../config/error');
+const Error = require('../configs/error');
 
 const handleCastErrorDB = () => {
   // const message = `Invalid ${err.path}: ${err.value}.`;

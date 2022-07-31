@@ -82,20 +82,21 @@ const Error = {
   CloudinaryError: {
     errCode: 306,
   },
+
   // 400++ Error from Internal Server
   GenericError: {
     statusCode: httpStatus.INTERNAL_SERVER_ERROR,
     errCode: 400,
     errMessage: 'Something wrong happened.',
   },
-  VehicleExitsError:{
+  VehicleExitsError: {
     errCode: 344,
-    errMessage:'This vehicle was already in the service'
+    errMessage: 'This vehicle was already in the service',
   },
-  VehicleNotExitsError:{
+  VehicleNotExitsError: {
     errCode: 345,
-    errMessage:'This vehicle is not in the service'
-  }
+    errMessage: 'This vehicle is not in the service',
+  },
 };
 
 module.exports = Error;

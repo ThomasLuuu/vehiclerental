@@ -1,6 +1,6 @@
 const { ResponseService, MobileService } = require('../services');
 const { catchAsync } = require('../utils');
-const { Error } = require('../config');
+const { Error } = require('../configs');
 
 const sendCode = catchAsync(async (req, res) => {
   const userId = req.params.id;

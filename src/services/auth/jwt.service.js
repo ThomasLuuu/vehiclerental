@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const ResponseService = require('../response/response.service');
-const { Error } = require('../../config');
+const { Error } = require('../../configs');
 
 const genToken = async (userId) => {
   const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 60 * 20 });

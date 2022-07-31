@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 const cloudinary = require('cloudinary');
 const ResponseService = require('../../response/response.service');
-const { Error } = require('../../../config');
+const { Error } = require('../../../configs');
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

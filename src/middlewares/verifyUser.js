@@ -1,4 +1,4 @@
-const { Error, authHeaderPrefix } = require('../config');
+const { Error, authHeaderPrefix } = require('../configs');
 const { ResponseService, JwtService } = require('../services');
 
 module.exports = async (req, res, next) => {

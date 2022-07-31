@@ -1,13 +1,13 @@
-//User-Vehicle PATH
+// User-Vehicle PATH
 const router = require('express').Router();
-const verifyToken = require('../middleWares/verifyUser.js');
-const vehicleController = require('../controller/vehicle.controller.js');
+const { verifyUser } = require('../middlewares');
+const { VehicleController } = require('../controllers');
 
-router.route('/').get( vehicleController.getAllVehicles);
-router.route('/createvehicle').post(vehicleController.createVehicle);
-router.route('/search/:id').get(vehicleController.getVehicleById);
-router.route('/update/:id').post(vehicleController.updateVehicleById);
-router.route('/delete/:id').post(vehicleController.deleteVehicleById);
-router.route('/delete/search/:id').get(vehicleController.searchDeletedVehicleById);
+router.route('/').get(verifyUser, VehicleController.getAllVehicles);
+router.route('/createvehicle').post(verifyUser, VehicleController.createVehicle);
+router.route('/search/:id').get(verifyUser, VehicleController.getVehicleById);
+router.route('/update/:id').post(verifyUser, VehicleController.updateVehicleById);
+router.route('/delete/:id').post(verifyUser, VehicleController.deleteVehicleById);
+router.route('/delete/search/:id').get(verifyUser, VehicleController.searchDeletedVehicleById);
 
 module.exports = router;

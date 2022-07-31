@@ -4,4 +4,4 @@ const MobileRouter = require('./mobile.router');
 const PostRouter = require('./post.router');
 const VehicleRouter = require('./vehicle.router');
 
-module.exports = { UserRouter, AuthRouter, MobileRouter, PostRouter, VehicleRouter  };
+module.exports = { UserRouter, AuthRouter, MobileRouter, PostRouter, VehicleRouter };
