@@ -1,15 +1,21 @@
 import './App.css';
-import {Title} from './components/LiveAnywhere';
-import {Img} from './components/LiveAnywhere';
+import LiveAnywhere from './components/LiveAnywhere/LiveAnywhere';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import ExploreNearby from './components/ExploreNearby/ExploreNearby';
+import { useState } from 'react';
+import InfiniteScroll from './components/LiveAnywhere/InfiniteScroll';
 
 function App() {
+  const [query, setQuery] = useState('');
+  const [pageNumber, setPage] = useState(1);
+  InfiniteScroll(query, pageNumber);
   return (
     <div className="App">
-      <Title />
-      <Img loc={require('./img/Img1.jpg')} />
-      <Img loc={require('./img/Img2.jpg')} />
-      <Img loc={require('./img/Img3.jpg')} />
-      <Img loc={require('./img/Img4.jpg')} />
+      <Header />
+      <ExploreNearby />
+      <LiveAnywhere />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,9 @@
+#ExploreNearby{
+    margin-top: 20px;
+}
+
+#ExploreNearby > h2{
+    font-family: Airbnb;
+    font-size: 26px;
+    font-weight: 800;
+}
