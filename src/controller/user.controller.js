@@ -1,6 +1,6 @@
 const {responseService} = require('../services/response/response.service.js');
 const {catchAsync} = require('../utils');
-const verifyToken = require('../middleWares/verifyToken.js');
+const verifyToken = require('../middleWares/verifyUser.js');
 const UserService = require('../services/user/user.js');
 // const indexService = require('../services/index.js');
 const Error = require('../config/error')
