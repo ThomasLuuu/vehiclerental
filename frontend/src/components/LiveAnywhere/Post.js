@@ -1,4 +1,4 @@
-export const Img = ({loc, name, rating, type, color, price}) => {
+export const Post = ({loc, name, rating, type, color, price}) => {
     return (
       <div className="container" style={{margin: '20px'}}>
         <img src={loc} alt="" className="img" />
