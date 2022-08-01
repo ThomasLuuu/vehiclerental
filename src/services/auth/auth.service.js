@@ -3,7 +3,7 @@ const { User } = require('../../models');
 const { registerValidator } = require('../../utils');
 const ResponseService = require('../response/response.service');
 const JwtService = require('./jwt.service');
-const { Error } = require('../../config');
+const { Error } = require('../../configs');
 
 const register = async (username, email, password) => {
   const { err } = registerValidator({ username, email, password });
@@ -13,8 +13,6 @@ const register = async (username, email, password) => {
   const checkEmailExist = await User.findOne({ email });
 
   if (checkEmailExist) throw ResponseService.newError(Error.EmailExists.errCode, Error.EmailExists.errMessage);
-
-  console.log(password);
 
   const newUser = new User({
     username,

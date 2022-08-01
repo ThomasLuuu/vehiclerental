@@ -1,5 +1,5 @@
 const express = require('express');
-const { PostController } = require('../controller');
+const { PostController } = require('../controllers');
 const fileHandler = require('../middlewares/multer');
 const { verifyUser } = require('../middlewares');
 
