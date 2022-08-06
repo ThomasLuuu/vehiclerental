@@ -15,4 +15,10 @@ const getUserBySearch = catchAsync(async (req, res) =>{
     if(!user) throw responseService.newError(Error.UserNotFound.errCode, Error.UserNotFound.errMessage);
     res.status(200).json(user);
 })
-module.exports = {getAllUsers,getUserBySearch};
+
+const updateUserById = catchAsync(async (req, res) =>{
+    const userID = req.params.idUser;
+    const user = 
+
+})
+module.exports = {getAllUsers,getUserBySearch, updateUserById};

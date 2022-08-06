@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: AirBnb;
+  src: url(./font/AirbnbCereal_W_Md.otf);
+}
+
+@font-face {
+  font-family: AirBnb_lt;
+  src: url(./font/AirbnbCereal_W_Lt.otf);
+}
+
+body {
+  margin: 0;
+  font-family: AirBnb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

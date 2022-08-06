@@ -38,6 +38,15 @@ const Error = {
     errCode: 108,
     errMessage: 'Phone empty',
   },
+  AuthHeaderEmpty: {
+    errCode: 109,
+    errMessage: 'Authorization header empty',
+  },
+  AuthHeaderInvalid: {
+    errCode: 110,
+    errMessage: 'Authorization header invalid',
+  },
+
   // 200++ Error from Db
   CastError: {
     errCode: 201,
@@ -65,7 +74,13 @@ const Error = {
   },
   TokenInvalid: {
     errCode: 304,
-    errMessage: 'Token invalid',
+  },
+  SecretMissing: {
+    errCode: 305,
+    errMessage: 'Token secret missing',
+  },
+  CloudinaryError: {
+    errCode: 306,
   },
   // 400++ Error from Internal Server
   GenericError: {

@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 const { registerValidator } = require('../../utils');
 const ResponseService = require('../response/response.service');
+const JwtService = require('./jwt.service');
 const { Error } = require('../../config');
 
 const register = async (username, email, password) => {
@@ -36,8 +36,14 @@ const login = async (email, password) => {
   if (!user) throw ResponseService.newError(Error.UserNotFound.errCode, Error.UserNotFound.errMessage);
   const checkPassword = await bcrypt.compare(password, user.password);
   if (!checkPassword) throw ResponseService.newError(Error.PasswordInvalid.errCode, Error.PasswordInvalid.errMessage);
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET, { expiresIn: 60 * 60 * 24 });
-  return token;
+
+  return JwtService.genToken(user._id);
 };
 
-module.exports = { register, login };
+const genRefreshAndAccess = async (token, secret) => {
+  const userId = await JwtService.tokenVerified(token, secret);
+  const { accessToken, refreshToken } = await JwtService.genToken(userId);
+  return { accessToken, refreshToken };
+};
+
+module.exports = { register, login, genRefreshAndAccess };

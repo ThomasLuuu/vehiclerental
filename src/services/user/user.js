@@ -16,4 +16,10 @@ const getUserBySearch = async(searchFilter) =>{
     }
 
 }
-module.exports = {getUser, getUserBySearch};
+
+const updateUserById = async(id) =>{
+    let id = params.id;
+    
+
+}
+module.exports = {getUser, getUserBySearch, updateUserById};
