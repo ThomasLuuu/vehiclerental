@@ -13,7 +13,11 @@ const cookieParser = require('cookie-parser');
 const { Error } = require('./config');
 const { globalErrorHandler } = require('./middlewares');
 const { ResponseService } = require('./services');
+<<<<<<< HEAD:src/server.js
 const { AuthRouter, UserRouter, MobileRouter, PostRouter } = require('./routers');
+=======
+const { AuthRouter, UserRouter, MobileRouter, PostRouter, VehicleRouter } = require('./routers');
+>>>>>>> beaedc0f8aa53dbd7b684b381a4f7e85bc15b523:src/app.js
 
 const app = express();
 
@@ -85,6 +89,10 @@ app.use('/api/auth', AuthRouter);
 app.use('/api/user', UserRouter);
 app.use('/api/mobile', MobileRouter);
 app.use('/api/post', PostRouter);
+<<<<<<< HEAD:src/server.js
+=======
+app.use('/api/vehicle', VehicleRouter);
+>>>>>>> beaedc0f8aa53dbd7b684b381a4f7e85bc15b523:src/app.js
 
 // handling all (get,post,update,delete.....) unhandled routes
 app.use('*', (req, res, next) => {

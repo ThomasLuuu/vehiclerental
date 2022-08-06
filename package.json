@@ -47,8 +47,14 @@
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongo": "^0.1.0",
+<<<<<<< HEAD
     "mongodb": "^4.8.0",
     "mongoose": "^6.4.6",
+=======
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.2",
+    "mongoosejs-soft-delete": "^1.0.2",
+>>>>>>> beaedc0f8aa53dbd7b684b381a4f7e85bc15b523
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "node-modules": "^1.0.1",

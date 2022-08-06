@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+let softDelete = require('mongoosejs-soft-delete');
 
 const vehicleSchema = new mongoose.Schema({
   name: {
@@ -22,5 +23,6 @@ const vehicleSchema = new mongoose.Schema({
   },
 });
 
+vehicleSchema.plugin(softDelete);
 const vehicle = mongoose.model('vehicle', vehicleSchema);
 module.exports = vehicle;
