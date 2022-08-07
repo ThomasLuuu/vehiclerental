@@ -17,7 +17,7 @@ const getVehicleById = catchAsync(async (req, res) => {
 const getAllVehicles = catchAsync(async (req, res) => {
   const vehicle = await VehicleService.getVehicle();
   if (!vehicle) throw ResponseService.newError(Error.VehicleExitsError.errCode, Error.VehicleExitsError.errMessage);
-  res.status(200).json(ResponseService.newSuccess(vehicle));
+  res.json(vehicle);
 });
 
 const updateVehicleById = catchAsync(async (req, res) => {
