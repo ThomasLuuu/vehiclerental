@@ -8,24 +8,20 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const path = require('path');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
-const { Error } = require('./config');
+const { Error } = require('./configs');
 const { globalErrorHandler } = require('./middlewares');
 const { ResponseService } = require('./services');
-const { AuthRouter, UserRouter, MobileRouter } = require('./routers');
+const { AuthRouter, UserRouter, MobileRouter, PostRouter, VehicleRouter } = require('./routers');
 
 const app = express();
 
 // Express body parser
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './node_modules_bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, './config')));
 
-// allow bodyParser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 // db configuration
 
 dotenv.config();
@@ -88,6 +84,8 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/auth', AuthRouter);
 app.use('/api/user', UserRouter);
 app.use('/api/mobile', MobileRouter);
+app.use('/api/post', PostRouter);
+app.use('/api/vehicle', VehicleRouter);
 
 // handling all (get,post,update,delete.....) unhandled routes
 app.use('*', (req, res, next) => {

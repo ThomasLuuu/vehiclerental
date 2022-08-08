@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 const { ResponseService } = require('../services');
-const Error = require('../config/error');
+const Error = require('../configs/error');
 
 const handleCastErrorDB = () => {
   // const message = `Invalid ${err.path}: ${err.value}.`;
@@ -8,7 +8,6 @@ const handleCastErrorDB = () => {
 };
 
 const handleDuplicateFieldsDB = () => {
-  // const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
   // console.log(value);
 
   // const message = `Duplicate field value: ${value}. Please use another value!`;
