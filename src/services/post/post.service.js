@@ -8,7 +8,18 @@ const createPost = async (files) => {
 };
 
 const getAllPost = async () => {
-  const posts = await Post.find({});
+  let posts = await Post.find({});
+  posts = await modifyPostsAfterRetrievedFromDb(posts);
+
+  return { posts };
+};
+
+const getPostsByUserId = async (userId) => {
+  const posts = await Post.find({ postedBy: Object(userId) });
+  return { posts };
+};
+
+const modifyPostsAfterRetrievedFromDb = async (posts) => {
   for (let post of posts) {
     const { vehicle } = await VehicleService.getVehicleByPostId(post._id);
     post = { ...post, vehicle };
@@ -20,12 +31,7 @@ const getAllPost = async () => {
     post = { ...post, rating: totalRating };
   }
 
-  return { posts };
-};
-
-const getPostsByUserId = async (userId) => {
-  const posts = await Post.find({ postedBy: Object(userId) });
-  return { posts};
+  return posts;
 };
 
 module.exports = { createPost, getPostsByUserId, getAllPost };
