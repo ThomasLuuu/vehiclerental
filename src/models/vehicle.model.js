@@ -10,19 +10,29 @@ const vehicleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  version: {
+  type: {
     type: String,
+    required: true,
+  },
+  color: {
+    type: String,
+    required: true,
+  },
+  brand: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
     required: true,
   },
   price: {
     type: Number,
     required: true,
   },
-  rating: {
-    type: Number,
-  },
+  ofPost: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
 });
 
 vehicleSchema.plugin(softDelete);
-const vehicle = mongoose.model('vehicle', vehicleSchema);
+const vehicle = mongoose.model('Vehicle', vehicleSchema);
 module.exports = vehicle;
