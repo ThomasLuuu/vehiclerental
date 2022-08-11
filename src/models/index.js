@@ -1,11 +1,13 @@
-const FeedBack = require('./feedback.model');
 const User = require('./user.model');
 const Vehicle = require('./vehicle.model');
-const Role = require('./role.model');
+const Post = require('./post.model');
+const Review = require('./review.model');
+const Rating = require('./rating.model');
 
 module.exports = {
-  FeedBack,
   User,
   Vehicle,
-  Role,
+  Post,
+  Review,
+  Rating,
 };
