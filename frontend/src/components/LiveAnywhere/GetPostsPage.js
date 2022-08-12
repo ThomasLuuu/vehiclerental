@@ -30,7 +30,8 @@ const GetPostsPage = () => {
     
     return (
         vehicles.length > 0 && vehicles.map((data, i) => {
-            <Post key={data._id} loc={data.url} name={data.name} rating={data.rating} type={data.version} color={data.color} price={price_value}/>
+            const price_value = "$" + data.price;
+            return <Post key={data._id} loc={data.url} name={data.name} rating={data.rating} type={data.version} color={data.color} price={price_value}/>
         })
         
     )

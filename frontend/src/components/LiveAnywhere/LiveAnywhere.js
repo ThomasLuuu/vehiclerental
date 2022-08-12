@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import './LiveAnywhere.css';
 import GetPostsPage from './GetPostsPage.js'
 import { Title } from './Title.js';
