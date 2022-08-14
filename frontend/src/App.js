@@ -3,18 +3,22 @@ import LiveAnywhere from './components/LiveAnywhere/LiveAnywhere';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import ExploreNearby from './components/ExploreNearby/ExploreNearby';
-import {PostTitle, InfoLine, ShowcasePics} from './components/DetailedProfile';
-
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import InfiniteScroll from './components/LiveAnywhere/InfiniteScroll';
-
+import {Loading} from './components/Loading/Loading';
 function App() {
   const [query, setQuery] = useState('');
   const [pageNumber, setPage] = useState(1);
-  InfiniteScroll(query, pageNumber);
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 6000)
+  }, [])
   return (
-    <div className="App">
+    <>
+    {loading === false ? (
+      <div className="App">
+      {/* <Loading /> */}
       <Header />
       {/* <ExploreNearby />
       <LiveAnywhere /> */}
@@ -23,6 +27,10 @@ function App() {
       <ShowcasePics/>
       <Footer />
     </div>
+    ) : (
+      <Loading /> 
+    )}
+    </>
   );
 }
 

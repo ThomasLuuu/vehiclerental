@@ -1,19 +1,38 @@
 const mongoose = require('mongoose');
+const softDelete = require('mongoosejs-soft-delete');
 
 const vehicleSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true,
   },
-  version: {
+  plate: {
     type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  color: {
+    type: String,
+    required: true,
+  },
+  brand: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
   },
   price: {
     type: Number,
+    required: true,
   },
-  rating: {
-    type: Number,
-  },
+  ofPost: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
 });
 
-const vehicle = mongoose.model('vehicle', vehicleSchema);
+vehicleSchema.plugin(softDelete);
+const vehicle = mongoose.model('Vehicle', vehicleSchema);
 module.exports = vehicle;
