@@ -29,6 +29,11 @@ const getVehicle = async () => {
   return { vehicles };
 };
 
+const getVehicleByPostId = async (postId) => {
+  const vehicle = await Vehicle.findOne({ ofPost: Object(postId) });
+  return { vehicle };
+};
+
 const updateVehicleById = async (vehicleInfo, vehicleId) => {
   const newInfoVehicle = await Vehicle.findByIdAndUpdate({ _id: Object(vehicleId) }, { $set: vehicleInfo });
   return newInfoVehicle.save();
@@ -48,6 +53,7 @@ module.exports = {
   createVehicle,
   getVehicle,
   getVehicleById,
+  getVehicleByPostId,
   updateVehicleById,
   deleteVehicleById,
   searchVehicleByIdDeleted,
