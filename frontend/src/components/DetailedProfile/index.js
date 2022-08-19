@@ -5,4 +5,12 @@ import {InfoLine} from "./InfoLine";
 import {ShowcasePics} from "./ShowcasePics";
 
 
-export {PostTitle, InfoLine, ShowcasePics};
+
+export function FullPage(){
+    return(
+        <div>
+            
+        </div>
+    )
+}
+
