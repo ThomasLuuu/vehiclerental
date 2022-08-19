@@ -1,10 +1,15 @@
 @font-face {
-    font-family: AirBnb;
-    src: url(../../font/AirbnbCereal_W_Md.otf);
-  }
+  font-family: AirBnb;
+  src: url(../../font/AirbnbCereal_W_Md.otf);
+}
+
+@font-face {
+  font-family: AirBnb_lt;
+  src: url(../../font/AirbnbCereal_W_Lt.otf);
+}
   
   .title{
-    margin-left: 16px;
+    margin-top: 30px;
     margin-bottom: 25px;
     font-family: Airbnb;
     font-size: 26px;
@@ -13,7 +18,7 @@
   
   .img{
     width: 250px;
-    border-radius: 25px;
+    border-radius: 10px;
   }
   
   .img:hover{
@@ -26,15 +31,16 @@
   
   .icon{
     --size: 25px;
+    z-index: 2;
+    position: relative;
+    display: inline;
     visibility: hidden;
+    margin-top: -105%;
+    margin-left: auto;
+    margin-right: -85%;
     color: white;
-    position: absolute;
-    margin-left: -30px;
-    font-size: 16px;
     width: var(--size);
-    height: 250px;
-    margin-top: auto;
-    margin-bottom: auto;
+    height: inherit;
     transition: visibility 0.25s;
   }
   
@@ -45,6 +51,82 @@
   
   .container{
     display: inline-block;
-    width: fit-content;
-    height: fit-content;
+    width: max-content;
+    height: max-content;
+  }
+
+  .detail{
+    z-index: 2;
+    width: max-content;
+    height: 100px;
+    position: relative;
+    top: 0;
+    margin-top: -14px;
+    text-align: left;
+  }
+
+  .detail .name{
+    margin-top: 10px;
+    font-size: 15.5px;
+    line-height: 0;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: flex;
+    align-content: center;
+  }
+
+  .detail .rating{
+    margin-top: -9px;
+    font-family: AirBnb_lt;
+    width: 250px;
+    float: right;
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+    right: 0;
+    text-align: right;
+  }
+
+  .detail .star-icon{
+    margin-top: 2.5px;
+    margin-right: 2px;
+    display: inline;
+  }
+
+  .detail .type{
+    font-family: AirBnb_lt;
+    color: grey;
+    font-size: 15px;
+    line-height: 1;
+    width: max-content;
+    height: max-content;
+    position: relative;
+  }
+
+  .detail .color{
+    font-family: AirBnb_lt;
+    color: grey;
+    font-size: 15px;
+    line-height: 1.5;
+    width: max-content;
+    height: max-content;
+    position: relative;
+  }
+
+  .detail .price{
+    font-family: AirBnb_lt;
+    font-weight: lighter;
+    color: grey;
+  }
+
+  .detail .price_val{
+    font-weight: bold;
+    color: black;
+    margin-right: 4px;
+  }
+
+  .spinner{
+    margin-left: auto;
+    margin-right: auto;
   }

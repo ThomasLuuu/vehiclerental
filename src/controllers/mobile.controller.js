@@ -1,6 +1,6 @@
 const { ResponseService, MobileService } = require('../services');
 const { catchAsync } = require('../utils');
-const { Error } = require('../config');
+const { Error } = require('../configs');
 
 const sendCode = catchAsync(async (req, res) => {
   const userId = req.params.id;
@@ -11,7 +11,7 @@ const sendCode = catchAsync(async (req, res) => {
   const user = await MobileService.sendCode(userId, phone);
   if (!user) throw ResponseService.newError(Error.UserNotFound.errCode, Error.UserNotFound.errMessage);
 
-  res.status(200).json(ResponseService.newSucess(user));
+  res.status(200).json(ResponseService.newSuccess(user));
 });
 
 const verify = catchAsync(async (req, res) => {
@@ -20,7 +20,7 @@ const verify = catchAsync(async (req, res) => {
   const code = req.params.code;
 
   await MobileService.verify(userId, code);
-  res.status(200).json(ResponseService.newSucess());
+  res.status(200).json(ResponseService.newSuccess());
 });
 
 module.exports = { sendCode, verify };

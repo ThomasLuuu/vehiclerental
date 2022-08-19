@@ -5,7 +5,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 const { User } = require('../../models');
 const ResponseService = require('../response/response.service');
-const { Error } = require('../../config');
+const { Error } = require('../../configs');
 
 const sendCode = async (userId, phone) => {
   const codeVerify = (Math.random() + 1).toString(36).substring(7);

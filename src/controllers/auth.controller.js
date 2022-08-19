@@ -4,7 +4,7 @@ const { catchAsync } = require('../utils');
 const register = catchAsync(async (req, res) => {
   const { username, email, password } = req.body;
   await AuthService.register(username, email, password);
-  res.status(200).json(ResponseService.newSucess());
+  res.status(200).json(ResponseService.newSuccess());
 });
 
 const login = catchAsync(async (req, res) => {
@@ -12,7 +12,7 @@ const login = catchAsync(async (req, res) => {
   const { refreshToken, accessToken } = await AuthService.login(email, password);
 
   res.cookie('refreshToken', refreshToken, { maxAge: 60 * 60 * 24, httpOnly: true });
-  res.header('auth-token', accessToken).json(ResponseService.newSucess());
+  res.header('Authorization', `Bearer ${accessToken}`).json(ResponseService.newSuccess());
 });
 
 const genRefreshAndAccess = catchAsync(async (req, res) => {
@@ -24,12 +24,12 @@ const genRefreshAndAccess = catchAsync(async (req, res) => {
   );
 
   res.cookie('refreshToken', newRefreshToken, { maxAge: 60 * 60 * 24, httpOnly: true });
-  res.header('auth-token', accessToken).json(ResponseService.newSucess());
+  res.header('Authorization', `Bearer ${accessToken}`).json(ResponseService.newSuccess());
 });
 
 const logout = catchAsync(async (req, res) => {
   res.cookie('refreshToken', '');
-  res.status(200).json(ResponseService.newSucess());
+  res.header('Authorization', '').json(ResponseService.newSuccess());
 });
 
 module.exports = { register, login, logout, genRefreshAndAccess };
