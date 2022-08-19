@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import ExploreNearby from './components/ExploreNearby/ExploreNearby';
 import { useState, useEffect } from 'react';
-import InfiniteScroll from './components/LiveAnywhere/InfiniteScroll';
+// import InfiniteScroll from './components/LiveAnywhere/InfiniteScroll';
 import {Loading} from './components/Loading/Loading';
 function App() {
   const [query, setQuery] = useState('');
@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 6000)
+    setTimeout(() => setLoading(false), 1000)
   }, [])
   return (
     <>
