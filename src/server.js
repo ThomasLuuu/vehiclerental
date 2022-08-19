@@ -26,14 +26,7 @@ app.use(express.static(path.join(__dirname, './config')));
 
 dotenv.config();
 // connect db
-mongoose.connect(
-  process.env.DB_CONNECT,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => console.log('connected to the database')
-);
+mongoose.connect(process.env.DB_CONNECT, () => console.log('connected to the database'));
 // Use morgan to log any requests come to server
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
