@@ -4,12 +4,12 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import ExploreNearby from './components/ExploreNearby/ExploreNearby';
 import { useState } from 'react';
-import InfiniteScroll from './components/LiveAnywhere/InfiniteScroll';
+// import InfiniteScroll from './components/LiveAnywhere/InfiniteScroll';
 
 function App() {
   const [query, setQuery] = useState('');
   const [pageNumber, setPage] = useState(1);
-  InfiniteScroll(query, pageNumber);
+  // InfiniteScroll(query, pageNumber);
   return (
     <>
     {loading === false ? (
