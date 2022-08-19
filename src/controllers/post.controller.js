@@ -7,4 +7,9 @@ const createPost = catchAsync(async (req, res) => {
   res.status(200).json(ResponseService.newSuccess(data));
 });
 
-module.exports = { createPost };
+const getAllPosts = catchAsync(async (req, res) => {
+  const  posts = await PostService.getAllPost();
+  res.status(200).json(ResponseService.newSuccess(posts));
+});
+
+module.exports = { createPost, getAllPosts };
