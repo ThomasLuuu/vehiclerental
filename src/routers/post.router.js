@@ -6,5 +6,6 @@ const { verifyUser } = require('../middlewares');
 const router = express.Router();
 
 router.route('/uploadImages').post(verifyUser, fileHandler.array('image'), PostController.createPost);
+router.route('/getAllPosts').get(verifyUser, PostController.getAllPosts);
 
 module.exports = router;
