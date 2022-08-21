@@ -4,6 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 
+import React, { useEffect, useState } from "react";
 import { AppContext } from './context/AppContext';
 import Chat from './components/chat/Chat';
 import ChatWithHost from './components/chat/ChatWithHost';
@@ -20,6 +21,13 @@ import SearchResults from './components/search/SearchResults';
 import './index.css';
 
 function App() {
+  const [query, setQuery] = useState('');
+  const [pageNumber, setPage] = useState(1);
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000)
+  }, [])
   return (
     <AppContext>
       <Router>
