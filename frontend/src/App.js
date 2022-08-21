@@ -4,6 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 
+import React, { useEffect, useState } from "react";
 import { AppContext } from './context/AppContext';
 import Chat from './components/chat/Chat';
 import ChatWithHost from './components/chat/ChatWithHost';
