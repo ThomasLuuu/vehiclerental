@@ -1,10 +1,12 @@
-import { useEffect, Component } from 'react';
+import { useEffect, useState , Component } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import bg from '../../images/bg.webp';
-
 import * as uiService from '../../services/ui';
-
+import { FaMap  } from "react-icons/fa";
 class Home extends Component {
+  
+   history = () => useHistory();
 
   getLocation = function(){
 
@@ -29,7 +31,7 @@ class Home extends Component {
           uiService.showDarkHeader();
         }
     this.getLocation();
-  }
+  };
   render(){
     return (
       <div className="home">
@@ -38,7 +40,7 @@ class Home extends Component {
           <h1>Could not find the place to go?</h1>
           <h1>Great!</h1>
           <div className="home__button-container">
-            <button>Quick Search</button>
+            <button onClick={event =>  window.location.href='/map'}>Show Map <FaMap /></button>
           </div>
         </div>
       </div>
