@@ -5,3 +5,4 @@ export const CHAT = '/chat';
 export const HOST = '/host';
 export const DETAIL = '/detail';
 export const PROFILE = '/profile';
+export const MAP = '/map';

@@ -566,7 +566,7 @@ input {
 .home__title button {
   border: none;
   -webkit-text-fill-color: transparent !important;
-  background: linear-gradient(90deg, #6f019c 0%, #c6017e 135.12%) !important;
+  background: linear-gradient(90deg, #000000 0%, #c6017e 135.12%) !important;
   background-clip: text !important;
   font-size: 1.125rem;
   outline: none;
