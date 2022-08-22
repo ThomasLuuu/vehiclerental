@@ -56,7 +56,7 @@ input {
 
 .login__welcome {
   padding-left: 10.5rem;
-  padding-top: 13.5rem;
+  padding-top: 11rem;
 }
 
 .login__welcome img {
@@ -73,7 +73,7 @@ input {
 }
 
 .login__form-container {
-  padding-top: 6.5rem;
+  padding-top: 10rem;
 }
 
 .login__form {

@@ -1,12 +1,9 @@
 import { useEffect, useRef, useContext } from "react";
 import validator from "validator";
 import { useHistory } from 'react-router-dom';
-
 import withModal from "../common/Modal";
 import SignUp from "../register/SignUp";
-
 import { Context } from "../../context/AppContext";
-
 import * as cometChatService from "../../services/cometchat";
 import * as firebaseService from "../../services/firebase";
 import * as routeService from "../../services/route";
@@ -16,6 +13,7 @@ import * as uiService from "../../services/ui";
 import * as FIREBASE_KEYS from "../../constants/firebase-keys";
 import * as ROUTES from "../../constants/routes";
 import * as STORAGE_KEYS from "../../constants/storage-keys";
+import logo from './Logo.png'
 
 const Login = (props) => {
   const { toggleModal } = props;
@@ -80,12 +78,12 @@ const Login = (props) => {
   };
 
   return (
-    <div className="login__container">
+    <div className="login__container ">
       <div className="login__welcome">
         <div className="login__logo">
-          <img src='https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b655820bf3d4_asset%2021.svg' alt='logo' />
+          <img src={logo} alt='logo'  />
         </div>
-        <p>Build <span style={{ color: "#FF385C", fontWeight: 'bold' }}>AirBnb Clone</span> with React</p>
+        <p>Easily Booking A Vehicle With <span style={{ color: "#FF385C", fontWeight: 'bold' }}>Fake Taxi</span></p>
       </div>
       <div className="login__form-container">
         <div className="login__form">
@@ -103,6 +101,7 @@ const Login = (props) => {
         </div>
       </div>
     </div>
+  
   );
 }
 
