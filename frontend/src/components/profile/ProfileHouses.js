@@ -56,7 +56,7 @@ const ProfileHouses = ({ profile }) => {
 
   return (
     <div className="profile__houses">
-      {houses.map(house => <ProfileHouse house={house} onItemClicked={onItemClicked} />)}
+      {houses.map(house => <ProfileHouse key={house} house={house} onItemClicked={onItemClicked} />)}
     </div>
   );
 };

@@ -353,14 +353,13 @@ input {
   padding-left: 4rem;
 }
 
-.header__left svg {
+.header__left img {
   width: 2rem;
   height: 2rem;
-  fill: white;
 }
 
-.header__left--light svg {
-  fill: #e81e51;
+.header__left img, #header-right {
+cursor: pointer;
 }
 
 .header__image-wrapper {
@@ -373,47 +372,6 @@ input {
 
 .header__left img {
   object-fit: cover;
-}
-
-.header__middle {
-  align-items: center;
-  color: #fff;
-  display: grid;
-  padding-left: 17rem;
-}
-
-.header__middle--light {
-  color: #000;
-}
-
-.header__middle-container {
-  display: flex;
-}
-
-.header__middle-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header__middle-item p {
-  text-align: center;
-}
-
-.header__middle-item > div {
-  background: #fff;
-  height: 2px;
-  margin-top: 0.25rem;
-  width: 1.5rem;
-}
-
-.header__middle-item--light > div {
-  background: #e81e51;
-}
-
-.header__middle-item:hover {
-  cursor: pointer;
-  opacity: 0.8;
 }
 
 .header__gap {
@@ -488,7 +446,7 @@ input {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  padding: 1rem 3rem;
+  padding: 8px 3rem;
   position: relative;
 }
 
