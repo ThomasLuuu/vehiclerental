@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
+
 import ProfileLeft from './ProfileLeft';
 import ProfileIntro from './ProfileIntro';
 import ProfileHouses from './ProfileHouses';
@@ -12,6 +13,7 @@ import * as STORAGE_KEYS from '../../constants/storage-keys';
 const Profile = () => {
   const [profile, setProfile] = useState(null);
 
+
   const loadProfile = useCallback(() => {
     const profile = JSON.parse(storageService.get(STORAGE_KEYS.PROFILE));
     if (profile) {
@@ -19,11 +21,14 @@ const Profile = () => {
     }
   }, []);
 
+
+
   useEffect(() => {
     window.onload = function () {
       uiService.showLightHeader();
     }
     loadProfile();
+
   }, [loadProfile]);
 
   if (!profile) return <></>;

@@ -10,10 +10,10 @@
       "properties": {
         "PARK_ID": 960,
         "FACILITYID": 28014,
-        "NAME": "Bearbrook Skateboard Park",
-        "NAME_FR": "Planchodrome Bearbrook",
-        "ADDRESS": "8720 Russell Road",
-        "ADDRESS_FR": "8720, chemin Russell",
+        "NAME": "Ho Chi Minh city",
+        "NAME_FR": "Ho Chi Minh city",
+        "ADDRESS": "Ho Chi Minh City, Vietnam",
+        "ADDRESS_FR": "Ho Chi Minh City, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -32,7 +32,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.3372987731628, 45.383321536272049]
+        "coordinates": [106.660172, 10.762622]
       }
     },
     {
@@ -40,10 +40,10 @@
       "properties": {
         "PARK_ID": 1219,
         "FACILITYID": 28001,
-        "NAME": "Bob MacQuarrie Skateboard Park (SK8 Extreme Park)",
-        "NAME_FR": "Planchodrome Bob-MacQuarrie (Parc SK8 Extreme)",
-        "ADDRESS": "1490 Youville Drive",
-        "ADDRESS_FR": "1490, promenade Youville",
+        "NAME": "Hanoi",
+        "NAME_FR": "Hanoi, Hoan Kiem District, Hanoi, Vietnam",
+        "ADDRESS": "Hanoi, Hoan Kiem District, Hanoi, Vietnam",
+        "ADDRESS_FR": "Hanoi, Hoan Kiem District, Hanoi, Vietnam",
         "FACILITY_T": "other",
         "FACILITY_1": "autre",
         "ACCESSCTRL": "no/non",
@@ -62,7 +62,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.546518086577947, 45.467134581917357]
+        "coordinates": [105.849998, 21.033333]
       }
     },
     {
@@ -70,10 +70,10 @@
       "properties": {
         "PARK_ID": 1157,
         "FACILITYID": 28002,
-        "NAME": "Walter Baker Skateboard Park",
-        "NAME_FR": "Planchodrome Walter-Baker",
-        "ADDRESS": "100 Charlie Rogers Place",
-        "ADDRESS_FR": "100, place Charlie Rogers",
+        "NAME": "Hue City",
+        "NAME_FR": "Hue City, Thua Thien Hue, Vietnam",
+        "ADDRESS": "Hue City, Thua Thien Hue, Vietnam",
+        "ADDRESS_FR": "Hue City, Thua Thien Hue, Vietnam",
         "FACILITY_T": "bowl",
         "FACILITY_1": "bol",
         "ACCESSCTRL": "no/non",
@@ -92,7 +92,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.898610599532319, 45.295014379864874]
+        "coordinates": [107.570183, 16.461109]
       }
     },
     {
@@ -100,10 +100,10 @@
       "properties": {
         "PARK_ID": 9,
         "FACILITYID": 28006,
-        "NAME": "Roving Skateboard Park Location",
-        "NAME_FR": "Lieu de planchodrome itinérant",
-        "ADDRESS": "2785 8th Line Road",
-        "ADDRESS_FR": "2785, chemin 8th Line",
+        "NAME": "Da Nang",
+        "NAME_FR": "Da Nang, Vietnam",
+        "ADDRESS": "Da Nang, Vietnam",
+        "ADDRESS_FR": "Da Nang, Vietnam",
         "FACILITY_T": "other",
         "FACILITY_1": "autre",
         "ACCESSCTRL": "no/non",
@@ -122,7 +122,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.468561642270757, 45.23032561834377]
+        "coordinates": [108.206230, 16.047079]
       }
     },
     {
@@ -130,10 +130,10 @@
       "properties": {
         "PARK_ID": 1160,
         "FACILITYID": 28007,
-        "NAME": "Roving Skateboard Park Location",
-        "NAME_FR": "Lieu de planchodrome itinérant",
-        "ADDRESS": "10 Warner Colpitts Lane",
-        "ADDRESS_FR": "10, ruelle Warner Colpitts",
+        "NAME": "Haiphong",
+        "NAME_FR": "Haiphong, Vietnam",
+        "ADDRESS": "Haiphong, Vietnam",
+        "ADDRESS_FR": "Haiphong, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "yes/oui",
@@ -152,7 +152,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.926651366520872, 45.260659774950561]
+        "coordinates": [106.683830, 20.865139]
       }
     },
     {
@@ -160,10 +160,10 @@
       "properties": {
         "PARK_ID": 1693,
         "FACILITYID": 28016,
-        "NAME": "Legacy Skateboard Park",
-        "NAME_FR": "Planchodrome Legacy",
-        "ADDRESS": "101 Centrepointe Drive",
-        "ADDRESS_FR": "101, promenade Centrepointe",
+        "NAME": "Soc Trang",
+        "NAME_FR": "Soc Trang, Vietnam",
+        "ADDRESS": "Soc Trang, Vietnam",
+        "ADDRESS_FR": "Soc Trang, Vietnam",
         "FACILITY_T": "bowl",
         "FACILITY_1": "bol",
         "ACCESSCTRL": "no/non",
@@ -182,7 +182,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.760933332842754, 45.345566668964558]
+        "coordinates": [105.973907, 9.602521]
       }
     },
     {
@@ -190,10 +190,10 @@
       "properties": {
         "PARK_ID": 1717,
         "FACILITYID": 28018,
-        "NAME": "Greenboro Skateboard Park",
-        "NAME_FR": "Planchodrome de Greenboro",
-        "ADDRESS": "3142 Conroy Road",
-        "ADDRESS_FR": "3142, chemin Conroy",
+        "NAME": "Binh Duong",
+        "NAME_FR": "Binh Duong",
+        "ADDRESS": "Binh Duong, Vietnam",
+        "ADDRESS_FR": "Binh Duong, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -212,7 +212,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.625996131485707, 45.375401587496128]
+        "coordinates": [106.713028, 10.924067]
       }
     },
     {
@@ -220,10 +220,10 @@
       "properties": {
         "PARK_ID": 137,
         "FACILITYID": 28019,
-        "NAME": "Bridlewood Skateboard Park",
-        "NAME_FR": "Planchodrome Bridlewood",
-        "ADDRESS": "65 Stonehaven Drive",
-        "ADDRESS_FR": "65, promenade Stonehaven",
+        "NAME": "Vinh City",
+        "NAME_FR": "Vinh, Nghe An, Vietnam",
+        "ADDRESS": "Vinh, Nghe An, Vietnam",
+        "ADDRESS_FR": "Vinh, Nghe An, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -242,7 +242,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.857009812435976, 45.290758029776626]
+        "coordinates": [105.681335, 18.679585]
       }
     },
     {
@@ -250,9 +250,9 @@
       "properties": {
         "PARK_ID": 1133,
         "FACILITYID": 28020,
-        "NAME": "Roving Skateboard Park Location",
-        "NAME_FR": "Lieu de planchodrome itinérant",
-        "ADDRESS": "100 Clifford Campbell Street",
+        "NAME": "Ha Long, Quảng Ninh Province, Vietnam",
+        "NAME_FR": "Ha Long, Quảng Ninh Province, Vietnam",
+        "ADDRESS": "Ha Long, Quảng Ninh Province, Vietnam",
         "ADDRESS_FR": "100, rue Clifford-Campbell",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
@@ -272,7 +272,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-76.206087708136721, 45.470459866077654]
+        "coordinates": [107.042542, 20.959902]
       }
     },
     {
@@ -280,10 +280,10 @@
       "properties": {
         "PARK_ID": 657,
         "FACILITYID": 28000,
-        "NAME": "Roving Skateboard Park Location",
-        "NAME_FR": "Lieu de planchodrome itinérant",
-        "ADDRESS": "110 Malvern Drive",
-        "ADDRESS_FR": "110, promenade Malvern",
+        "NAME": "Can Tho, Vietnam",
+        "NAME_FR": "Can Tho, Vietnam",
+        "ADDRESS": "Can Tho, Vietnam",
+        "ADDRESS_FR": "Can Tho, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -302,7 +302,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.760235255689508, 45.280622216516925]
+        "coordinates": [105.746857, 10.045162]
       }
     },
     {
@@ -310,10 +310,10 @@
       "properties": {
         "PARK_ID": 653,
         "FACILITYID": 28008,
-        "NAME": "Roving Skateboard Park Location",
-        "NAME_FR": "Lieu de planchodrome itinérant",
-        "ADDRESS": "5660 Osgoode Main Street",
-        "ADDRESS_FR": "5660, rue Osgoode Main",
+        "NAME": "Biên Hòa, Dong Nai, Vietnam",
+        "NAME_FR": "Dong Nai, Vietnam",
+        "ADDRESS": "Dong Nai, Vietnam",
+        "ADDRESS_FR": "Dong Nai, Vietnam",
         "FACILITY_T": "other",
         "FACILITY_1": "autre",
         "ACCESSCTRL": "no/non",
@@ -332,7 +332,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.60118478829267, 45.147641950106689]
+        "coordinates": [106.856461, 10.964112]
       }
     },
     {
@@ -340,10 +340,10 @@
       "properties": {
         "PARK_ID": 812,
         "FACILITYID": 35050,
-        "NAME": "Charlie Bowins Skateboard Park",
-        "NAME_FR": "Planchodrome Charlie-Bowins",
-        "ADDRESS": "435 Bronson Avenue",
-        "ADDRESS_FR": "435, avenue Bronson",
+        "NAME": "Cao Bang, Vietnam",
+        "NAME_FR": "Cao Bang, Vietnam",
+        "ADDRESS": "Cao Bang, Vietnam",
+        "ADDRESS_FR": "Cao Bang, Vietnam",
         "FACILITY_T": "bowl",
         "FACILITY_1": "bol",
         "ACCESSCTRL": "no/non",
@@ -362,7 +362,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.703622500360268, 45.408488357092367]
+        "coordinates": [106.260452, 22.679281]
       }
     },
     {
@@ -370,10 +370,10 @@
       "properties": {
         "PARK_ID": 2457,
         "FACILITYID": 35637,
-        "NAME": "Diamond Jubilee Skateboard Park",
-        "NAME_FR": "Planchodrome Jubilé de Diamant",
-        "ADDRESS": "2810 Findlay Creek Drive",
-        "ADDRESS_FR": "2810, promenade Findlay Creek",
+        "NAME": "Thanh Hoa, Vietnam",
+        "NAME_FR": "Thanh Hoa, Vietnam",
+        "ADDRESS": "Ba Thuoc District, Thanh Hoa, Vietnam",
+        "ADDRESS_FR": "Ba Thuoc District, Thanh Hoa, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -392,7 +392,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.609516309730921, 45.314086718258636]
+        "coordinates": [105.221214, 20.351387]
       }
     },
     {
@@ -400,10 +400,10 @@
       "properties": {
         "PARK_ID": 430,
         "FACILITYID": 28005,
-        "NAME": "Blackburn Skateboard Park",
-        "NAME_FR": "Planchodrome Blackburn",
-        "ADDRESS": "190 Glen Park Drive",
-        "ADDRESS_FR": "190, promenade Glen Park",
+        "NAME": "Yen Bai Province, Vietnam",
+        "NAME_FR": "Yen Bai Province, Vietnam",
+        "ADDRESS": "Yen Bai Province, Vietnam",
+        "ADDRESS_FR": "Yen Bai Province, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -422,7 +422,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.562796920677627, 45.429643413219814]
+        "coordinates": [104.898590, 21.716768]
       }
     },
     {
@@ -430,10 +430,10 @@
       "properties": {
         "PARK_ID": 989,
         "FACILITYID": 28017,
-        "NAME": "Goulbourn Skateboard Park",
-        "NAME_FR": "Planchodrome Goulbourn",
-        "ADDRESS": "1500 Shea Road",
-        "ADDRESS_FR": "1500, chemin Shea",
+        "NAME": "Tay Ninh province, Vietnam",
+        "NAME_FR": "Tay Ninh province, Vietnam",
+        "ADDRESS": "Tay Ninh province, Vietnam",
+        "ADDRESS_FR": "Tay Ninh province, Vietnam",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
         "ACCESSCTRL": "no/non",
@@ -452,7 +452,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.907108695123526, 45.26222860981953]
+        "coordinates": [106.131363, 11.375031]
       }
     },
     {
