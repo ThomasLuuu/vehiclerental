@@ -23,7 +23,7 @@ const Car = ({ car, keyword }) => {
     <div className="car" onClick={view}>
       <img src={car.image} alt="car" />
       <div className="car__info">
-        <p className="car__title">Private room at {keyword}</p>
+        <p className="car__title">Private vehicle at {keyword}</p>
         <p className="car__name">{car.name}</p>
         <div className="car__divider"></div>
         <p className="car__description">{car.description}</p>
@@ -33,7 +33,7 @@ const Car = ({ car, keyword }) => {
         </div>
         <div className="car__price">
           <span className="car__price-value">{car.price}$</span>
-          <span> / night</span>
+          <span> / day</span>
         </div>
       </div>
     </div>
