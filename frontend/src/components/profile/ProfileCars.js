@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useHistory } from 'react-router';
 
-import ProfileHouse from './ProfileHouse';
+import ProfileCar from './ProfileCar';
 
 import * as firebaseService from '../../services/firebase';
 import * as routeService from '../../services/route';
@@ -12,53 +12,53 @@ import * as FIREBASE_KEYS from '../../constants/firebase-keys';
 import * as ROUTES from '../../constants/routes';
 import * as STORAGE_KEYS from '../../constants/storage-keys';
 
-const ProfileHouses = ({ profile }) => {
-  const [houses, setHouses] = useState([]);
+const ProfileCars = ({ profile }) => {
+  const [cars, setCars] = useState([]);
 
-  const housesRef = useRef(firebaseService.getRef(FIREBASE_KEYS.HOUSES));
-  const tempRef = housesRef.current;
+  const carsRef = useRef(firebaseService.getRef(FIREBASE_KEYS.CARS));
+  const tempRef = carsRef.current;
 
   const history = useHistory();
 
-  const loadHouses = useCallback(() => {
-    firebaseService.getDataRealtimeQuery({ ref: housesRef, query: FIREBASE_KEYS.CREATED_BY, criteria: profile.id, callback: onDataLoaded });
-  }, [housesRef, profile]);
+  const loadCars = useCallback(() => {
+    firebaseService.getDataRealtimeQuery({ ref: carsRef, query: FIREBASE_KEYS.CREATED_BY, criteria: profile.id, callback: onDataLoaded });
+  }, [carsRef, profile]);
 
   const onDataLoaded = val => {
     if (val) {
       const keys = Object.keys(val);
       const data = keys.map(key => val[key]);
-      setHouses(() => data);
+      setCars(() => data);
     }
   };
 
   useEffect(() => {
     const keywords = storageService.get(STORAGE_KEYS.KEYWORD);
     if (keywords) {
-      loadHouses(keywords);
+      loadCars(keywords);
     }
-  }, [loadHouses]);
+  }, [loadCars]);
 
   useEffect(() => {
     return () => {
-      setHouses(() => []);
+      setCars(() => []);
       tempRef.off();
     };
   }, [tempRef]);
 
-  const onItemClicked = house => () => {
+  const onItemClicked = car => () => {
     uiService.showLightHeader();
-    storageService.save({ key: STORAGE_KEYS.HOUSE, payload: JSON.stringify(house) });
+    storageService.save({ key: STORAGE_KEYS.CAR, payload: JSON.stringify(car) });
     routeService.navigate({ route: ROUTES.DETAIL, push: history.push });
   };
 
-  if (!houses || !houses.length) return <></>;
+  if (!cars || !cars.length) return <></>;
 
   return (
-    <div className="profile__houses">
-      {houses.map(house => <ProfileHouse key={house} house={house} onItemClicked={onItemClicked} />)}
+    <div className="profile__cars">
+      {cars.map(car => <ProfileCar key={car} car={car} onItemClicked={onItemClicked} />)}
     </div>
   );
 };
 
-export default ProfileHouses;
+export default ProfileCars;

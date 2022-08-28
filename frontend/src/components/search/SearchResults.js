@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-import Houses from '../houses/Houses';
+import Cars from '../cars/Cars';
 
 import * as uiService from '../../services/ui';
 import * as FIREBASE_KEYS from '../../constants/firebase-keys';
@@ -9,33 +9,33 @@ import * as STORAGE_KEYS from '../../constants/storage-keys';
 import * as storageService from '../../services/storage';
 
 const SearchResults = () => {
-  const [houses, setHouses] = useState();
+  const [cars, setCars] = useState();
 
-  const housesRef = useRef(firebaseService.getRef(FIREBASE_KEYS.HOUSES));
-  const tempRef = housesRef.current;
+  const carsRef = useRef(firebaseService.getRef(FIREBASE_KEYS.CARS));
+  const tempRef = carsRef.current;
 
-  const loadHouses = useCallback(keywords => {
-    firebaseService.getDataRealtimeQuery({ ref: housesRef, query: FIREBASE_KEYS.ADDRESS, criteria: keywords, callback: onDataLoaded });
-  }, [housesRef]);
+  const loadCars = useCallback(keywords => {
+    firebaseService.getDataRealtimeQuery({ ref: carsRef, query: FIREBASE_KEYS.ADDRESS, criteria: keywords, callback: onDataLoaded });
+  }, [carsRef]);
 
   const onDataLoaded = val => {
     if (val) {
       const keys = Object.keys(val);
       const data = keys.map(key => val[key]);
-      setHouses(() => data);
+      setCars(() => data);
     }
   };
 
   useEffect(() => {
     const keywords = storageService.get(STORAGE_KEYS.KEYWORD);
     if (keywords) {
-      loadHouses(keywords);
+      loadCars(keywords);
     }
-  }, [loadHouses]);
+  }, [loadCars]);
 
   useEffect(() => {
     return () => {
-      setHouses(() => []);
+      loadCars(() => []);
       tempRef.off();
     };
   }, [tempRef]);
@@ -48,7 +48,7 @@ const SearchResults = () => {
 
   return (
     <div className="search-results">
-      <Houses houses={houses} />
+      <Cars cars={cars} />
     </div>
   );
 };
