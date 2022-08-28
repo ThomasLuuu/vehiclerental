@@ -39,7 +39,7 @@ const Profile = () => {
       <div className="profile__right">
         <ProfileIntro profile={profile} />
         <div className="profile__divider"></div>
-        <h3>{profile.fullname}'s car/room for rent</h3>
+        <h3>{profile.fullname}'s vehicle for rent</h3>
         <ProfileCars profile={profile} />
       </div>
     </div>
