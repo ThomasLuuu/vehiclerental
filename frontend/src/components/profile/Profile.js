@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 import ProfileLeft from './ProfileLeft';
 import ProfileIntro from './ProfileIntro';
-import ProfileHouses from './ProfileHouses';
+import ProfileCars from './ProfileCars';
 
 import * as uiService from '../../services/ui';
 import * as storageService from '../../services/storage';
@@ -39,8 +39,8 @@ const Profile = () => {
       <div className="profile__right">
         <ProfileIntro profile={profile} />
         <div className="profile__divider"></div>
-        <h3>{profile.fullname}'s house/room for rent</h3>
-        <ProfileHouses profile={profile} />
+        <h3>{profile.fullname}'s car/room for rent</h3>
+        <ProfileCars profile={profile} />
       </div>
     </div>
   );

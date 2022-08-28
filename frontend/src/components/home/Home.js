@@ -2,6 +2,7 @@ import { useEffect, useState , Component } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import bg from '../../images/bg.webp';
+import background from '../../images/background.jpg';
 import * as uiService from '../../services/ui';
 import { FaMap  } from "react-icons/fa";
 class Home extends Component {
@@ -35,7 +36,7 @@ class Home extends Component {
   render(){
     return (
       <div className="home">
-        <img src={bg} alt="bg" />
+        <img src={background} alt="bg" />
         <div className="home__title">
           <h1>Could not find the place to go?</h1>
           <h1>Great!</h1>
