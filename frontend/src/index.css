@@ -56,7 +56,7 @@ input {
 
 .login__welcome {
   padding-left: 10.5rem;
-  padding-top: 13.5rem;
+  padding-top: 11rem;
 }
 
 .login__welcome img {
@@ -73,7 +73,7 @@ input {
 }
 
 .login__form-container {
-  padding-top: 6.5rem;
+  padding-top: 10rem;
 }
 
 .login__form {
@@ -353,14 +353,13 @@ input {
   padding-left: 4rem;
 }
 
-.header__left svg {
+.header__left img {
   width: 2rem;
   height: 2rem;
-  fill: white;
 }
 
-.header__left--light svg {
-  fill: #e81e51;
+.header__left img, #header-right {
+cursor: pointer;
 }
 
 .header__image-wrapper {
@@ -373,47 +372,6 @@ input {
 
 .header__left img {
   object-fit: cover;
-}
-
-.header__middle {
-  align-items: center;
-  color: #fff;
-  display: grid;
-  padding-left: 17rem;
-}
-
-.header__middle--light {
-  color: #000;
-}
-
-.header__middle-container {
-  display: flex;
-}
-
-.header__middle-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header__middle-item p {
-  text-align: center;
-}
-
-.header__middle-item > div {
-  background: #fff;
-  height: 2px;
-  margin-top: 0.25rem;
-  width: 1.5rem;
-}
-
-.header__middle-item--light > div {
-  background: #e81e51;
-}
-
-.header__middle-item:hover {
-  cursor: pointer;
-  opacity: 0.8;
 }
 
 .header__gap {
@@ -488,7 +446,7 @@ input {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  padding: 1rem 3rem;
+  padding: 7px 3rem;
   position: relative;
 }
 
@@ -517,8 +475,9 @@ input {
   justify-content: center;
   position: absolute;
   right: 1rem;
-  top: 1.25rem;
+  top: 0.875rem;
   width: 2rem;
+  cursor: pointer;
 }
 
 .search__container input {
@@ -566,7 +525,7 @@ input {
 .home__title button {
   border: none;
   -webkit-text-fill-color: transparent !important;
-  background: linear-gradient(90deg, #6f019c 0%, #c6017e 135.12%) !important;
+  background: linear-gradient(90deg, #000000 0%, #c6017e 135.12%) !important;
   background-clip: text !important;
   font-size: 1.125rem;
   outline: none;
@@ -699,7 +658,7 @@ input {
   opacity: 0.8;
 }
 
-.house {
+.car {
   border-bottom: 1px solid #ccc;
   grid-gap: 1rem;
   margin: 0 4rem;
@@ -708,43 +667,43 @@ input {
   grid-template-columns: max-content 1fr;
 }
 
-.house img {
+.car img {
   border-radius: 1rem;
   height: 12.5rem;
   object-fit: cover;
   width: 18.75rem;
 }
 
-.house__info {
+.car__info {
   color: #000;
   position: relative;
   width: 100%;
 }
 
-.house__title {
+.car__title {
   color: #717171;
   font-size: 0.875rem;
   padding-bottom: 0.5rem;
 }
 
-.house__name {
+.car__name {
   color: #000;
 }
 
-.house__divider {
+.car__divider {
   background: #ccc;
   height: 1px;
   width: 2rem;
   margin: 0.5rem 0;
 }
 
-.house__description {
+.car__description {
   color: #717171;
   font-size: 0.875rem;
   padding-bottom: 0.5rem;
 }
 
-.house__rating {
+.car__rating {
   align-items: center;
   bottom: 0;
   display: flex;
@@ -752,18 +711,18 @@ input {
   position: absolute;
 }
 
-.house__rating svg {
+.car__rating svg {
   fill: #ff385c;
 }
 
-.house__price {
+.car__price {
   align-items: center;
   bottom: 0;
   position: absolute;
   right: 0;
 }
 
-.house__price-value {
+.car__price-value {
   color: #000;
   font-weight: bold;
 }
@@ -772,38 +731,38 @@ input {
   height: calc(100vh - 9rem);
 }
 
-.house-detail {
+.car-detail {
   min-height: 100vh;
   overflow: auto;
   padding: 0 4rem;
 }
 
-.house-detail__name {
+.car-detail__name {
   font-size: 1.5rem;
   padding: 1rem 0;
 }
 
-.house-detail__sub {
+.car-detail__sub {
   display: flex;
   gap: 0.5rem;
   padding-bottom: 1rem;
 }
 
-.house-detail__rating {
+.car-detail__rating {
   display: flex;
   gap: 0.25rem;
 }
 
-.house-detail__rating svg {
+.car-detail__rating svg {
   fill: #ff385c;
 }
 
-.house-detail__address {
+.car-detail__address {
   color: #717171;
   text-decoration: underline;
 }
 
-.house-detail__images {
+.car-detail__images {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 18.75rem;
@@ -811,21 +770,21 @@ input {
   grid-gap: 0.5rem;
 }
 
-.house-detail__images-left {
+.car-detail__images-left {
   height: 100%;
-  max-height: 100%;
+  max-height: 500px;
   width: 100%;
 }
 
-.house-detail__images-left img {
+.car-detail__images-left img {
   border-bottom-left-radius: 1rem;
   border-top-left-radius: 1rem;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 
-.house-detail__images-right {
+.car-detail__images-right {
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
@@ -834,77 +793,78 @@ input {
   width: 100%;
 }
 
-.house-detail__images-right img {
+.car-detail__images-right img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-height: 250px;
+  object-fit: contain;
 }
 
-.house-detail__images-right img:nth-child(2) {
+.car-detail__images-right img:nth-child(2) {
   border-top-right-radius: 1rem;
 }
 
-.house-detail__images-right img:nth-child(4) {
+.car-detail__images-right img:nth-child(4) {
   border-bottom-right-radius: 1rem;
 }
 
-.house-detail__body {
+.car-detail__body {
   display: grid;
   grid-template-columns: 53% 45%;
   grid-gap: 2%;
 }
 
-.house__des-container {
+.car__des-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin-top: 13rem;
 }
 
-.house__des-right {
+.car__des-right {
   display: grid;
   justify-content: right;
 }
 
-.house__des-right img {
+.car__des-right img {
   border-radius: 50%;
   height: 4rem;
   width: 4rem;
 }
 
-.house__des h3 {
+.car__des h3 {
   color: #000;
 }
 
-.house__des-content {
+.car__des-content {
   color: #717171;
   font-size: 0.875rem;
   padding: 0.5rem 0;
 }
 
-.house__des-divider {
+.car__des-divider {
   background: #ccc;
   height: 1px;
   width: 100%;
   margin: 1rem 0;
 }
 
-.house__des-note {
+.car__des-note {
   display: flex;
   gap: 1rem;
   padding-bottom: 1.5rem;
 }
 
-.house__des-note > div p:nth-child(1) {
+.car__des-note > div p:nth-child(1) {
   font-weight: bold;
   padding-bottom: 0.5rem;
 }
 
-.house__des-note > div p:nth-child(2) {
+.car__des-note > div p:nth-child(2) {
   color: #717171;
   font-size: 0.875rem;
 }
 
-.house-detail-form {
+.car-detail-form {
   border: 1px solid rgb(221, 221, 221);
   border-radius: 0.75rem;
   padding: 2rem;
@@ -914,22 +874,22 @@ input {
 }
 
 
-.house-detail-form__price-value {
+.car-detail-form__price-value {
   color: #000;
   font-weight: bold;
 }
 
-.house-detail-form__header {
+.car-detail-form__header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.house-detail-form__rating {
+.car-detail-form__rating {
   display: grid;
   justify-content: right;
 }
 
-.house-detail-form__actions {
+.car-detail-form__actions {
   align-items: center;
   display: grid;
   grid-gap: 1rem;
@@ -937,11 +897,11 @@ input {
   padding: 1rem 0;
 }
 
-.house-detail-form__actions span {
+.car-detail-form__actions span {
   font-weight: bold;
 }
 
-.house-detail-form__actions button {
+.car-detail-form__actions button {
   background: #e81e51;
   border-radius: 0.5rem;
   border: none;
@@ -952,7 +912,7 @@ input {
   font-weight: bold;
 }
 
-.house-detail-form__actions button:hover {
+.car-detail-form__actions button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
@@ -1031,32 +991,32 @@ input {
   padding: 0.5rem 0;
 }
 
-.profile__houses {
+.profile__cars {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   padding: 1rem 0;
 }
 
-.profile__house img {
+.profile__car img {
   border-radius: 1rem;
   height: 12.5rem;
   object-fit: cover;
   width: 18.75rem;
 }
 
-.profile__house-rating {
+.profile__car-rating {
   align-items: center;
   display: flex;
   gap: 0.25rem;
   padding: 0.5rem 0;
 }
 
-.profile__house-rating svg {
+.profile__car-rating svg {
   fill: #ff385c;
 }
 
-.profile__house p {
+.profile__car p {
   padding-bottom: 0.5rem;
   font-size: 0.875rem;
 }
