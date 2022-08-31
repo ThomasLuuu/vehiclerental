@@ -14,14 +14,23 @@ const SearchResults = () => {
   const carsRef = useRef(firebaseService.getRef(FIREBASE_KEYS.CARS));
   const tempRef = carsRef.current;
 
-  const loadCars = useCallback(keywords => {
-    firebaseService.getDataRealtimeQuery({ ref: carsRef, query: FIREBASE_KEYS.ADDRESS, criteria: keywords, callback: onDataLoaded });
-  }, [carsRef]);
+  const loadCars = useCallback(
+    (keywords) => {
+      console.log(keywords);
+      firebaseService.getDataRealtimeQuery({
+        ref: carsRef,
+        query: FIREBASE_KEYS.ADDRESS,
+        criteria: keywords,
+        callback: onDataLoaded,
+      });
+    },
+    [carsRef]
+  );
 
-  const onDataLoaded = val => {
+  const onDataLoaded = (val) => {
     if (val) {
       const keys = Object.keys(val);
-      const data = keys.map(key => val[key]);
+      const data = keys.map((key) => val[key]);
       setCars(() => data);
     }
   };
@@ -33,17 +42,11 @@ const SearchResults = () => {
     }
   }, [loadCars]);
 
-  useEffect(() => {
-    return () => {
-      loadCars(() => []);
-      tempRef.off();
-    };
-  }, [tempRef]);
 
   useEffect(() => {
     window.onload = function () {
       uiService.showLightHeader();
-    }
+    };
   }, []);
 
   return (
