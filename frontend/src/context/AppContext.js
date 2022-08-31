@@ -10,7 +10,7 @@ export const AppContext = ({ children }) => {
     user,
     setUser,
     cometChat,
-    setCometChat
+    setCometChat,
   };
 
   const initAuthUser = () => {
@@ -22,15 +22,14 @@ export const AppContext = ({ children }) => {
 
   const initCometChat = async () => {
     const { CometChat } = await import('@cometchat-pro/chat');
-    const appID = `${process.env.REACT_APP_COMETCHAT_APP_ID}`;
-    const region = `${process.env.REACT_APP_COMETCHAT_REGION}`;
+    const appID = '2169051ce8e52a9f';
+    const region = 'us';
     const appSetting = new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(region).build();
     CometChat.init(appID, appSetting).then(
       () => {
         setCometChat(() => CometChat);
       },
-      error => {
-      }
+      (error) => {}
     );
   };
 
@@ -39,11 +38,7 @@ export const AppContext = ({ children }) => {
     initCometChat();
   }, []);
 
-  return (
-    <Context.Provider value={context}>
-      {children}
-    </Context.Provider>
-  );
+  return <Context.Provider value={context}>{children}</Context.Provider>;
 };
 
 export default AppContext;

@@ -11,7 +11,7 @@ import * as FIREBASE_KEYS from '../../constants/firebase-keys';
 
 
 const Create = ({ toggleModal }) => {
-  const [imageToHouse, setImageToHouse] = useState(false);
+  const [imageToCar, setImageToCar] = useState(false);
 
   const addressRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -21,13 +21,13 @@ const Create = ({ toggleModal }) => {
 
   const { user } = useContext(Context);
 
-  const addImageToHouse = (e) => {
+  const addImageToCar = (e) => {
     const reader = new FileReader();
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
     reader.onload = (readerEvent) => {
-      setImageToHouse(readerEvent.target.result);
+      setImageToCar(readerEvent.target.result);
     };
   };
 
@@ -40,13 +40,13 @@ const Create = ({ toggleModal }) => {
         const createdBy = user.id;
         const ownerName = user.fullname;
         const ownerImage = user.avatar;
-        const createdHouse = { id, createdBy, name, price, description, address, ownerName, ownerImage };
-        firebaseService.upload({ key: FIREBASE_KEYS.HOUSES, id, payload: imageToHouse, entity: createdHouse, callback: onImageUploaded })
+        const createdCar = { id, createdBy, name, price, description, address, ownerName, ownerImage };
+        firebaseService.upload({ key: FIREBASE_KEYS.CARS, id, payload: imageToCar, entity: createdCar, callback: onImageUploaded })
         uiService.hideLoading();
         toggleModal(false);
       }
     } catch (error) {
-      uiService.alert('Cannot create your house, please try again!');
+      uiService.alert('Cannot create your car, please try again!');
       uiService.hideLoading();
     }
   };
@@ -81,7 +81,7 @@ const Create = ({ toggleModal }) => {
 
   const onImageUploaded = async (entity, url) => {
     entity.image = url;
-    await firebaseService.insert({ key: FIREBASE_KEYS.HOUSES, id: entity.id, payload: entity });
+    await firebaseService.insert({ key: FIREBASE_KEYS.CARS, id: entity.id, payload: entity });
   };
 
   return (
@@ -99,13 +99,13 @@ const Create = ({ toggleModal }) => {
         </div>
         <div className="create__subtitle"></div>
         <div className="create__form">
-          {!imageToHouse && <div className="create__upload" onClick={() => filePickerRef.current.click()}>
-            Choose House Image
+          {!imageToCar && <div className="create__upload" onClick={() => filePickerRef.current.click()}>
+            Choose Car Image
           </div>}
-          {imageToHouse && <div className="create__image">
-            <img src={imageToHouse} alt="house" onClick={() => filePickerRef.current.click()} />
+          {imageToCar && <div className="create__image">
+            <img src={imageToCar} alt="car" onClick={() => filePickerRef.current.click()} />
           </div>}
-          <input type="file" hidden ref={filePickerRef} className="create__file" onChange={addImageToHouse} />
+          <input type="file" hidden ref={filePickerRef} className="create__file" onChange={addImageToCar} />
           <input type="text" placeholder="Name" ref={nameRef} />
           <input type="text" placeholder="Price" ref={priceRef} />
           <input type="text" placeholder="Address" ref={addressRef} />
