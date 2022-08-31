@@ -22,6 +22,9 @@
   "bugs": {
     "url": "https://github.com/ThomasLuuu/vehiclerental/issues"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "devDependencies": {
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
