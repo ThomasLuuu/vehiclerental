@@ -246,6 +246,7 @@ class CometChatReceiverImageMessageBubble extends React.Component {
 						<div css={messageImgContainerStyle()} className="message__image__container">
 							<div css={messageImgWrapperStyle(this.context)} onClick={this.open} className="message__image__wrapper">
 								<img
+									crossorigin="anonymous"
 									src={this.state.imageUrl}
 									alt={this.state.imageName}
 									ref={el => {

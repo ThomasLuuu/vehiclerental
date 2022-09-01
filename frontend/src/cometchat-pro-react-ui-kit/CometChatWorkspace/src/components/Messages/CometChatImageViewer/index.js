@@ -38,7 +38,7 @@ const CometChatImageViewer = (props) => {
         <React.Fragment>
             <CometChatBackdrop show={true} clicked={props.close} />
             <div css={imageWrapperStyle(context, closeIcon, image)} onClick={props.close} className="image__wrapper">
-                <img src={imageIcon} css={imgStyle(image)} alt={imageIcon} />
+                <img crossorigin="anonymous" src={imageIcon} css={imgStyle(image)} alt={imageIcon} />
             </div>
         </React.Fragment>
     );

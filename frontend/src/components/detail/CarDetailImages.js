@@ -5,10 +5,10 @@ const CarDetailImages = ({ car }) => {
         <img src={car.image} alt={car.name} />
       </div>
       <div className="car-detail__images-right">
-        <img src={car.image} alt={car.name} />
-        <img src={car.image} alt={car.name} />
-        <img src={car.image} alt={car.name} />
-        <img src={car.image} alt={car.name} />
+        <img crossorigin="anonymous" src={car.image} alt={car.name} />
+        <img crossorigin="anonymous" src={car.image} alt={car.name} />
+        <img crossorigin="anonymous" src={car.image} alt={car.name} />
+        <img crossorigin="anonymous" src={car.image} alt={car.name} />
       </div>
     </div>
   );

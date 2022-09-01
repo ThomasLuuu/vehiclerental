@@ -38,7 +38,6 @@ app.use(helmet({ contentSecurityPolicy: false }));
 // CORS for server and client communication
 app.use(
   cors({
-    credentials: true,
     origin: '*',
   })
 );

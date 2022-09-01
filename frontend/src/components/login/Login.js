@@ -1,27 +1,24 @@
-import { useEffect, useRef, useContext } from "react";
-import validator from "validator";
+import { useEffect, useRef, useContext } from 'react';
+import validator from 'validator';
 import { useHistory } from 'react-router-dom';
-import withModal from "../common/Modal";
-import SignUp from "../register/SignUp";
-import { Context } from "../../context/AppContext";
-import * as cometChatService from "../../services/cometchat";
-import * as firebaseService from "../../services/firebase";
-import * as routeService from "../../services/route";
-import * as storageService from "../../services/storage";
-import * as uiService from "../../services/ui";
+import withModal from '../common/Modal';
+import SignUp from '../register/SignUp';
+import { Context } from '../../context/AppContext';
+import * as cometChatService from '../../services/cometchat';
+import * as firebaseService from '../../services/firebase';
+import * as routeService from '../../services/route';
+import * as storageService from '../../services/storage';
+import * as uiService from '../../services/ui';
 
-import * as FIREBASE_KEYS from "../../constants/firebase-keys";
-import * as ROUTES from "../../constants/routes";
-import * as STORAGE_KEYS from "../../constants/storage-keys";
-import logo from './Logo.png'
+import * as FIREBASE_KEYS from '../../constants/firebase-keys';
+import * as ROUTES from '../../constants/routes';
+import * as STORAGE_KEYS from '../../constants/storage-keys';
+import logo from './Logo.png';
 
 const Login = (props) => {
   const { toggleModal } = props;
 
-  const {
-    cometChat,
-    setUser,
-  } = useContext(Context);
+  const { cometChat, setUser } = useContext(Context);
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -38,18 +35,22 @@ const Login = (props) => {
   }, [history, setUser]);
 
   const login = async () => {
-    console.log("passed")
+    console.log('passed');
 
     try {
       uiService.showLoading();
       const { email, password } = getInputs();
       if (isUserCredentialsValid(email, password)) {
         await firebaseService.login(email, password);
-        console.log("passed 1")
-        const user = await firebaseService.getData({ key: FIREBASE_KEYS.USERS, query: FIREBASE_KEYS.EMAIL, criteria: email });
-        console.log("passed")
+        console.log('passed 1');
+        const user = await firebaseService.getData({
+          key: FIREBASE_KEYS.USERS,
+          query: FIREBASE_KEYS.EMAIL,
+          criteria: email,
+        });
+        console.log('passed');
         await cometChatService.login({ cometChat, user });
-        console.log("passed")
+        console.log('passed');
         saveAuthedInfo(user);
         uiService.hideLoading();
         routeService.navigate({ route: ROUTES.HOME, push: history.push });
@@ -81,28 +82,27 @@ const Login = (props) => {
     <div className="login__container ">
       <div className="login__welcome">
         <div className="login__logo">
-          <img src={logo} alt='logo'  />
+          <img crossorigin="anonymous" src={logo} alt="logo" />
         </div>
-        <p>Easily Booking A Vehicle With <span style={{ color: "#FF385C", fontWeight: 'bold' }}>Fake Taxi</span></p>
+        <p>
+          Easily Booking A Vehicle With <span style={{ color: '#FF385C', fontWeight: 'bold' }}>Fake Taxi</span>
+        </p>
       </div>
       <div className="login__form-container">
         <div className="login__form">
-          <input
-            type="text"
-            placeholder="Email or phone number"
-            ref={emailRef}
-          />
+          <input type="text" placeholder="Email or phone number" ref={emailRef} />
           <input type="password" placeholder="Password" ref={passwordRef} />
           <button className="login__submit-btn" onClick={login}>
             Login
           </button>
           <span className="login__forgot-password">Forgot password?</span>
-          <span className="login__signup" onClick={() => toggleModal(true)}>Create New Account</span>
+          <span className="login__signup" onClick={() => toggleModal(true)}>
+            Create New Account
+          </span>
         </div>
       </div>
     </div>
-  
   );
-}
+};
 
 export default withModal(SignUp)(Login);

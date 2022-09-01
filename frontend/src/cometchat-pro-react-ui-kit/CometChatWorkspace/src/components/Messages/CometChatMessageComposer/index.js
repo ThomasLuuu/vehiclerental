@@ -880,7 +880,7 @@ class CometChatMessageComposer extends React.PureComponent {
 			const reactionName = this.props.reaction;
 			liveReactionBtn = (
 				<div title={liveReactionText} css={reactionBtnStyle()} className="button__reactions" onClick={this.startLiveReaction}>
-					<img src={heartIcon} alt={reactionName} />
+					<img crossorigin="anonymous" src={heartIcon} alt={reactionName} />
 				</div>
 			);
 		}
