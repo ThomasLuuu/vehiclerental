@@ -33,7 +33,16 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // set security http headers
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'script-src': ["'self'", "'unsafe-inline'", 'example.com'],
+      },
+    },
+  })
+);
 
 // CORS for server and client communication
 app.use(
