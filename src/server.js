@@ -87,6 +87,15 @@ app.use('/api/mobile', MobileRouter);
 app.use('/api/post', PostRouter);
 app.use('/api/vehicle', VehicleRouter);
 
+app.get('/', (req, res) => {
+  res
+    .set(
+      'Content-Security-Policy',
+      "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
+    )
+    .send('<html><head></head><body></body></html>');
+});
+
 // handling all (get,post,update,delete.....) unhandled routes
 app.use('*', (req, res, next) => {
   next(ResponseService.newError(Error.UrlNotFound.errCode, Error.UrlNotFound.errMessage));
