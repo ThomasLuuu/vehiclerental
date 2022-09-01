@@ -87,7 +87,17 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
     res.end();
   });
+
+  app.get('/', (req, res) => {
+    res
+      .set(
+        'Content-Security-Policy',
+        "default-src *; style-src 'self' http://* 'unsafe-inline'; connect-src *; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
+      )
+      .send('<html><head></head><body></body></html>');
+  });
 }
+
 // Use specific Router to handle each end point
 // path of routes
 app.use('/api/auth', AuthRouter);
@@ -95,15 +105,6 @@ app.use('/api/user', UserRouter);
 app.use('/api/mobile', MobileRouter);
 app.use('/api/post', PostRouter);
 app.use('/api/vehicle', VehicleRouter);
-
-app.get('/', (req, res) => {
-  res
-    .set(
-      'Content-Security-Policy',
-      "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
-    )
-    .send('<html><head></head><body></body></html>');
-});
 
 // handling all (get,post,update,delete.....) unhandled routes
 app.use('*', (req, res, next) => {
