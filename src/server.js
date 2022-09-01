@@ -33,16 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // set security http headers
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'script-src': ["'self'", "'unsafe-inline'", 'example.com'],
-      },
-    },
-  })
-);
+app.use(helmet({ contentSecurityPolicy: false }));
 
 // CORS for server and client communication
 app.use(
@@ -86,15 +77,6 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
     res.end();
-  });
-
-  app.get('/', (req, res) => {
-    res
-      .set(
-        'Content-Security-Policy',
-        "default-src *; style-src 'self' http://* 'unsafe-inline'; connect-src *; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
-      )
-      .send('<html><head></head><body></body></html>');
   });
 }
 
