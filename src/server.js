@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // set security http headers
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 
 // CORS for server and client communication
 app.use(
