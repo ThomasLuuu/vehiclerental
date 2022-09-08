@@ -31,7 +31,7 @@ class CometChatLiveReactions extends React.PureComponent {
 		this.before = Date.now();
 
 		const reaction = props.reaction ? enums.CONSTANTS["LIVE_REACTIONS"][props.reaction] : enums.CONSTANTS["LIVE_REACTIONS"]["heart"];
-		const reactionImg = <img src={heartIcon} alt={reaction} />;
+		const reactionImg = <img crossorigin="anonymous" src={heartIcon} alt={reaction} />;
 		this.emojis = Array(6).fill(reactionImg);
 	}
 

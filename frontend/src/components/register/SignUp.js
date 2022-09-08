@@ -1,14 +1,14 @@
-import { useRef, useContext } from "react";
-import validator from "validator";
-import { v4 as uuidv4 } from "uuid";
+import { useRef, useContext } from 'react';
+import validator from 'validator';
+import { v4 as uuidv4 } from 'uuid';
 
-import { Context } from "../../context/AppContext";
+import { Context } from '../../context/AppContext';
 
-import * as cometChatService from "../../services/cometchat";
-import * as firebaseService from "../../services/firebase";
-import * as uiService from "../../services/ui";
+import * as cometChatService from '../../services/cometchat';
+import * as firebaseService from '../../services/firebase';
+import * as uiService from '../../services/ui';
 
-import * as FIREBASE_KEYS from "../../constants/firebase-keys";
+import * as FIREBASE_KEYS from '../../constants/firebase-keys';
 
 const SignUp = (props) => {
   const { toggleModal } = props;
@@ -61,39 +61,39 @@ const SignUp = (props) => {
 
   const isSignupValid = ({ fullname, email, work, address, about, role, password, confirmPassword }) => {
     if (validator.isEmpty(fullname)) {
-      uiService.alert("Please input your fullname");
+      uiService.alert('Please input your fullname');
       return false;
     }
     if (!validator.isEmail(email)) {
-      uiService.alert("Please input your email");
+      uiService.alert('Please input your email');
       return false;
     }
     if (validator.isEmpty(work)) {
-      uiService.alert("Please input your work");
+      uiService.alert('Please input your work');
       return false;
     }
     if (validator.isEmpty(address)) {
-      uiService.alert("Please input your address");
+      uiService.alert('Please input your address');
       return false;
     }
     if (validator.isEmpty(about)) {
-      uiService.alert("Please input your about");
+      uiService.alert('Please input your about');
       return false;
     }
     if (validator.isEmpty(role)) {
-      uiService.alert("Please input your role");
+      uiService.alert('Please input your role');
       return false;
     }
     if (validator.isEmpty(password) || !validator.isLength(password, { min: 6 })) {
-      uiService.alert("Please input your password. You password must have at least 6 characters");
+      uiService.alert('Please input your password. You password must have at least 6 characters');
       return false;
     }
     if (validator.isEmpty(confirmPassword)) {
-      uiService.alert("Please input your confirm password");
+      uiService.alert('Please input your confirm password');
       return false;
     }
     if (password !== confirmPassword) {
-      uiService.alert("Confirm password and password must be the same");
+      uiService.alert('Confirm password and password must be the same');
       return false;
     }
     return true;
@@ -105,7 +105,7 @@ const SignUp = (props) => {
       'https://data-us.cometchat.io/assets/images/avatars/cyclops.png',
       'https://data-us.cometchat.io/assets/images/avatars/ironman.png',
       'https://data-us.cometchat.io/assets/images/avatars/spiderman.png',
-      'https://data-us.cometchat.io/assets/images/avatars/wolverine.png'
+      'https://data-us.cometchat.io/assets/images/avatars/wolverine.png',
     ];
     const avatarPosition = Math.floor(Math.random() * avatars.length);
     return avatars[avatarPosition];
@@ -118,6 +118,7 @@ const SignUp = (props) => {
           <div className="signup__title">Sign Up</div>
           <div className="signup__close">
             <img
+              crossorigin="anonymous"
               alt="close"
               onClick={() => toggleModal(false)}
               src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
@@ -131,16 +132,14 @@ const SignUp = (props) => {
           <input type="text" placeholder="Work" ref={workRef} />
           <input type="text" placeholder="Address" ref={addressRef} />
           <input type="text" placeholder="About" ref={aboutRef} />
-          <select ref={roleRef}>  
-            <option value="1" defaultChecked>Host</option>
+          <select ref={roleRef}>
+            <option value="1" defaultChecked>
+              Host
+            </option>
             <option value="0">Non-Host</option>
           </select>
           <input type="password" placeholder="Password" ref={passwordRef} />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            ref={confirmPasswordRef}
-          />
+          <input type="password" placeholder="Confirm Password" ref={confirmPasswordRef} />
           <button className="signup__btn" onClick={signup}>
             Sign Up
           </button>
@@ -148,6 +147,6 @@ const SignUp = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;

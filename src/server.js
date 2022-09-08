@@ -26,26 +26,18 @@ app.use(express.static(path.join(__dirname, './config')));
 
 dotenv.config();
 // connect db
-mongoose.connect(
-  process.env.DB_CONNECT,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => console.log('connected to the database')
-);
+mongoose.connect(process.env.DB_CONNECT, () => console.log('connected to the database'));
 // Use morgan to log any requests come to server
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
 // set security http headers
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 
 // CORS for server and client communication
 app.use(
   cors({
-    credentials: true,
     origin: '*',
   })
 );
@@ -86,6 +78,7 @@ if (process.env.NODE_ENV === 'production') {
     res.end();
   });
 }
+
 // Use specific Router to handle each end point
 // path of routes
 app.use('/api/auth', AuthRouter);
