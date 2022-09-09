@@ -1,6 +1,5 @@
 import { useEffect, useState, Component } from 'react';
 import { useHistory } from 'react-router-dom';
-
 import bg from '../../images/bg.webp';
 import background from '../../images/background.jpg';
 import * as uiService from '../../services/ui';

@@ -84,9 +84,8 @@ const Login = (props) => {
         <div className="login__logo">
           <img crossorigin="anonymous" src={logo} alt="logo" />
         </div>
-        <p>
-          Easily Booking A Vehicle With <span style={{ color: '#FF385C', fontWeight: 'bold' }}>Fake Taxi</span>
-        </p>
+        <p>Easy Booking A Vehicle With </p><p style={{ color: "#FF385C", fontWeight: 'bold' }}>Vehicle Rentals</p>
+
       </div>
       <div className="login__form-container">
         <div className="login__form">

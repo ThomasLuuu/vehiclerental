@@ -54,7 +54,7 @@ const Search = () => {
         <div className="search__form">
           <div className="search__form-input search__form-element">
             <span>Location</span>
-            <input type="text" placeholder="Locaton to pick up vehicle" ref={searchRef} />
+            <input type="text" placeholder="Location to pick up vehicle" ref={searchRef} />
           </div>
           <div className="search__form-start-date search__form-element">
             <span>Start Date</span>
