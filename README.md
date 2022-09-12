@@ -20,9 +20,9 @@ All group members contribute equally.
 - Deploy the website
 
 #4. Nguyen Cuong Anh Minh - s3931605 - Tasks:
-- Sending images in chat
-- Sending documents in chat
-- Sending videos in chat
+- Sending images, documents, videos in chat
+- Set up nodejs, mongodb and express
+- Implement authentication flow
 - Deploy the website
 
 #5. Nguyen Nguyen Khuong - s3924577 - Tasks:
