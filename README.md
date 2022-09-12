@@ -4,7 +4,7 @@ All group members contribute equally.
 #1. Luu Duy Toan - s3777213 - Tasks:
 - Create vehicle post
 - Search post based on location
-- Set up Firebase
+- Set up React, Firebase
 - Deploy the website
 
 #2. Hoang Ngoc Anh Duc - s3818988 - Tasks:
