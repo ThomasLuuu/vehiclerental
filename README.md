@@ -1,4 +1,13 @@
 # Vehicle Rental Web Application
+Github URL:
+https://github.com/ThomasLuuu/vehiclerental
+
+Deployment URL:
+https://vehicles-rental.herokuapp.com/
+
+Youtube video demo URL:
+https://www.youtube.com/watch?v=9Lwe1jC6K4Q&t=436s
+
 All group members contribute equally.
 
 #1. Luu Duy Toan - s3777213 - Tasks:
